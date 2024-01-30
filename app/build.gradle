@@ -30,7 +30,7 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass = 'jshell.App'
+    mainClass = 'jsh.App'
 }
 
 tasks.named('test') {
