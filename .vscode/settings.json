@@ -1,0 +1,13 @@
+{
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "java.codeAction.sortMembers.avoidVolatileChanges": true,
+    "java.codeGeneration.hashCodeEquals.useJava7Objects": true,
+    "java.codeGeneration.toString.codeStyle": "STRING_BUILDER",
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "java.format.enabled": true,
+    "java.format.onType.enabled": true,
+    "java.inlayHints.parameterNames.enabled": "none",
+    "java.saveActions.organizeImports": true,
+}
