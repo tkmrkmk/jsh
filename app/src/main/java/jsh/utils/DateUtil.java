@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.Locale;
 
 /**
- * @author Amuzak Iromekat
+ * @author zhu2qian1
  */
 public class DateUtil {
     private DateUtil() {
