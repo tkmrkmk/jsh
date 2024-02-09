@@ -11,8 +11,7 @@ import java.util.Locale;
  * @author zhu2qian1
  */
 public class DateUtil {
-    private DateUtil() {
-    }
+    private DateUtil() {}
 
     public static final int DAY_MILLISECONDS = 86400000; // 24 * 60 * 60 * 1000
 
@@ -30,7 +29,8 @@ public class DateUtil {
     }
 
     public static final LocalDateTime truncateTime(final LocalDateTime date) {
-        return LocalDateTime.of(date.getDayOfYear(), date.getMonthValue(), date.getDayOfMonth(), 0, 0, 0, 0);
+        return LocalDateTime.of(date.getDayOfYear(), date.getMonthValue(), date.getDayOfMonth(), 0,
+                0, 0, 0);
     }
 
     /**
@@ -47,8 +47,8 @@ public class DateUtil {
 
     public static final LocalDate toLocalDate(final Date date) {
         final Calendar cal = toCalendar(date);
-        return LocalDate.of(cal.get(Calendar.YEAR),
-                cal.get(Calendar.MONDAY), cal.get(Calendar.DAY_OF_MONTH));
+        return LocalDate.of(cal.get(Calendar.YEAR), cal.get(Calendar.MONDAY),
+                cal.get(Calendar.DAY_OF_MONTH));
     }
 
     public static final LocalDate toLocalDate(final LocalDateTime date) {
@@ -63,9 +63,8 @@ public class DateUtil {
 
     public static final LocalDateTime toLocalDateTime(final Date date) {
         final Calendar cal = toCalendar(date);
-        return LocalDateTime.of(cal.get(Calendar.YEAR),
-                cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH),
-                cal.get(Calendar.HOUR), cal.get(Calendar.MINUTE),
+        return LocalDateTime.of(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH),
+                cal.get(Calendar.DAY_OF_MONTH), cal.get(Calendar.HOUR), cal.get(Calendar.MINUTE),
                 cal.get(Calendar.SECOND), cal.get(Calendar.MILLISECOND) * 1000);
     }
 }
