@@ -6,8 +6,7 @@ import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 
 public final class RandomUtil {
-    private RandomUtil() {
-    }
+    private RandomUtil() {}
 
     public static <T> T pickRandom(Set<T> set) {
         return pickRandom(set, ThreadLocalRandom.current());
@@ -22,5 +21,9 @@ public final class RandomUtil {
             }
         }
         throw new RuntimeException("Something went wrong while randomly picking one from set.");
+    }
+
+    public static <T> T pickRandom(Collection<T> c) {
+        return pickRandom(c, ThreadLocalRandom.current());
     }
 }
