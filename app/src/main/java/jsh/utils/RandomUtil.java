@@ -1,5 +1,6 @@
 package jsh.utils;
 
+import java.util.Collection;
 import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
