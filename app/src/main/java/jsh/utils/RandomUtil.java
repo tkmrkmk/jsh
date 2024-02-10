@@ -12,11 +12,11 @@ public final class RandomUtil {
         return pickRandom(set, ThreadLocalRandom.current());
     }
 
-    public static <T> T pickRandom(Set<T> set, Random random) {
-        final int i = random.nextInt(set.size());
-        int c = 0;
-        for (T e : set) {
-            if (c++ == i) {
+    public static <T> T pickRandom(Collection<T> collection, final Random random) {
+        final int bound = random.nextInt(collection.size());
+        int i = 0;
+        for (T e : collection) {
+            if (i++ == bound) {
                 return e;
             }
         }
