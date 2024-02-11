@@ -1,7 +1,7 @@
 package jsh.utils.exceptions;
 
 /**
- * Thrown to indicate that a method has been passed non-natural number as an argument while
+ * Thrown to indicate that a method has been passed is non-natural number as an argument while
  * expecting natural number.
  */
 public class NonNaturalNumberException extends IllegalArgumentException {
