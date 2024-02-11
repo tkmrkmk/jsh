@@ -13,10 +13,10 @@ public final class RandomUtil {
     }
 
     public static <T> T pickRandom(Collection<T> collection, final Random random) {
-        final int bound = random.nextInt(collection.size());
+        final int ti = random.nextInt(collection.size());
         int i = 0;
         for (T e : collection) {
-            if (i++ == bound) {
+            if (i++ == ti) {
                 return e;
             }
         }
