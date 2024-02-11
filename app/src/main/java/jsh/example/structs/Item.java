@@ -15,8 +15,8 @@ public class Item implements Comparable<Item> {
     }
 
     public static final Comparator<Item> itemPriceComparator =
-            (t, o) -> Integer.valueOf(t.price).compareTo(o.price);
-    public static final Comparator<Item> itemNameComparator = //
+            (t, o) -> Integer.compare(t.price, o.price);
+    public static final Comparator<Item> itemNameComparator =
             (t, o) -> t.name.compareTo(o.name);
 
     @Override
