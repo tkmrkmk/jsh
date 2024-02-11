@@ -2,8 +2,8 @@ package jsh.utils;
 
 import jsh.utils.exceptions.NonNaturalNumberException;
 
-public final class ValidateUtil {
-    private ValidateUtil() {}
+public final class ValidationUtil {
+    private ValidationUtil() {}
 
     public static long requireNaturalNumber(final long n, final String message) {
         if (isNaturalNumber(n)) {
