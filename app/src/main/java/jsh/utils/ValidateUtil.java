@@ -1,5 +1,7 @@
 package jsh.utils;
 
+import jsh.utils.exceptions.NonNaturalNumberException;
+
 public final class ValidateUtil {
     private ValidateUtil() {}
 
@@ -7,14 +9,14 @@ public final class ValidateUtil {
         if (isNaturalNumber(n)) {
             return n;
         }
-        throw new IllegalArgumentException(message);
+        throw new NonNaturalNumberException(message);
     }
 
     public static long requireNaturalNumber(final long n) {
         if (isNaturalNumber(n)) {
             return n;
         }
-        throw new IllegalArgumentException();
+        throw new NonNaturalNumberException();
     }
 
     // methods for other primitive types
