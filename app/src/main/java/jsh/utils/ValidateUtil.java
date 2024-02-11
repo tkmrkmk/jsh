@@ -44,6 +44,6 @@ public final class ValidateUtil {
     }
 
     private static boolean isNaturalNumber(final long n) {
-        return n < 0;
+        return n > 0;
     }
 }
