@@ -1,6 +1,7 @@
 package jsh.utils;
 
 import jsh.utils.exceptions.NonNaturalNumberException;
+import jsh.utils.exceptions.NonPositiveNumberException;
 
 public final class ValidationUtil {
     private ValidationUtil() {}
@@ -17,6 +18,35 @@ public final class ValidationUtil {
             return n;
         }
         throw new NonNaturalNumberException();
+    }
+
+    /**
+     * Validate {@code n} is a positive number (including 0).
+     * 
+     * @param n the number to validate.
+     * @return the validated number.
+     * @throws NonPositiveNumberException when {@code n} is not a positive number.
+     */
+    public static long requirePositiveNumber(final long n, final String message) {
+        if (n >= 0) {
+            return n;
+        }
+        throw new NonPositiveNumberException(message);
+    }
+
+    /**
+     * Validate {@code n} is a positive number (including 0).
+     * 
+     * @param n the number to validate.
+     * @param message message for an error thrown when {@code n} is not positive number.
+     * @return the validated number.
+     * @throws NonPositiveNumberException when {@code n} is not a positive number.
+     */
+    public static long requirePositiveNumber(final long n) {
+        if (n >= 0) {
+            return n;
+        }
+        throw new NonPositiveNumberException();
     }
 
     // methods for other primitive types
@@ -45,7 +75,73 @@ public final class ValidationUtil {
         return (byte) requireNaturalNumber((long) n);
     }
 
-    private static boolean isNaturalNumber(final long n) {
-        return n > 0;
+    /**
+     * c.f. {@link jsh.utils.ValidationUtil#requirePositiveNumber(long, String)}.
+     * 
+     * @param n the number to validate.
+     * @param message message for an error thrown when {@code n} is not positive number.
+     * @return the validated number.
+     * @throws NonPositiveNumberException when {@code n} is not a positive number.
+     */
+    public static int requirePositiveNumber(final int n, final String message) {
+        return (int) requirePositiveNumber((long) n, message);
     }
+
+    /**
+     * c.f. {@link jsh.utils.ValidationUtil#requirePositiveNumber(long, String)}.
+     * 
+     * @param n the number to validate.
+     * @param message message for an error thrown when {@code n} is not positive number.
+     * @return the validated number.
+     * @throws NonPositiveNumberException when {@code n} is not a positive number.
+     */
+    public static short requirePositiveNumber(final short n, final String message) {
+        return (short) requirePositiveNumber((long) n, message);
+    }
+
+    /**
+     * c.f. {@link jsh.utils.ValidationUtil#requirePositiveNumber(long, String)}.
+     * 
+     * @param n the number to validate.
+     * @param message message for an error thrown when {@code n} is not positive number.
+     * @return the validated number.
+     * @throws NonPositiveNumberException when {@code n} is not a positive number.
+     */
+    public static byte requirePositiveNumber(final byte n, final String message) {
+        return (byte) requirePositiveNumber((long) n, message);
+    }
+
+    /**
+     * c.f. {@link jsh.utils.ValidationUtil#requirePositiveNumber(long)}.
+     * 
+     * @param n the number to validate.
+     * @return the validated number.
+     * @throws NonPositiveNumberException when {@code n} is not a positive number.
+     */
+    public static int requirePositiveNumber(final int n) {
+        return (int) requirePositiveNumber((long) n);
+    }
+
+    /**
+     * c.f. {@link jsh.utils.ValidationUtil#requirePositiveNumber(long)}.
+     * 
+     * @param n the number to validate.
+     * @return the validated number.
+     * @throws NonPositiveNumberException when {@code n} is not a positive number.
+     */
+    public static short requirePositiveNumber(final short n) {
+        return (short) requirePositiveNumber((long) n);
+    }
+
+    /**
+     * c.f. {@link jsh.utils.ValidationUtil#requirePositiveNumber(long)}.
+     * 
+     * @param n the number to validate.
+     * @return the validated number.
+     * @throws NonPositiveNumberException when {@code n} is not a positive number.
+     */
+    public static byte requirePositiveNumber(final byte n) {
+        return (byte) requirePositiveNumber((long) n);
+    }
+
 }
