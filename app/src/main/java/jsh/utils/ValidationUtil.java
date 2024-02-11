@@ -6,14 +6,14 @@ public final class ValidationUtil {
     private ValidationUtil() {}
 
     public static long requireNaturalNumber(final long n, final String message) {
-        if (isNaturalNumber(n)) {
+        if (n > 0) {
             return n;
         }
         throw new NonNaturalNumberException(message);
     }
 
     public static long requireNaturalNumber(final long n) {
-        if (isNaturalNumber(n)) {
+        if (n > 0) {
             return n;
         }
         throw new NonNaturalNumberException();
