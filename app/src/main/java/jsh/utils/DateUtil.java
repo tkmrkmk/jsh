@@ -10,7 +10,7 @@ import java.util.Locale;
 /**
  * @author zhu2qian1
  */
-public class DateUtil {
+public final class DateUtil {
     private DateUtil() {}
 
     public static final int DAY_MILLISECONDS = 86400000; // 24 * 60 * 60 * 1000
