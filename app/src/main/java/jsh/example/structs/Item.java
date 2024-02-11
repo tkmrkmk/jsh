@@ -9,7 +9,7 @@ public class Item implements Comparable<Item> {
     protected int price;
     protected String name;
 
-    public Item(int price, @NonNull String name) {
+    public Item(int price, @NonNull final String name) {
         this.price = price;
         this.name = name;
     }
