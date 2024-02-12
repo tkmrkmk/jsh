@@ -89,14 +89,15 @@ public final class DateUtil {
 
     public static final LocalTime toLocalTime(final Date date) {
         final Calendar cal = toCalendar(date);
-        return LocalTime.of(cal.get(Calendar.HOUR), cal.get(Calendar.MINUTE),
+        return LocalTime.of(cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE),
                 cal.get(Calendar.SECOND), cal.get(Calendar.MILLISECOND) * 1000);
     }
 
     public static final LocalDateTime toLocalDateTime(final Date date) {
         final Calendar cal = toCalendar(date);
         return LocalDateTime.of(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH),
-                cal.get(Calendar.DAY_OF_MONTH), cal.get(Calendar.HOUR), cal.get(Calendar.MINUTE),
+                cal.get(Calendar.DAY_OF_MONTH), cal.get(Calendar.HOUR_OF_DAY),
+                cal.get(Calendar.MINUTE),
                 cal.get(Calendar.SECOND), cal.get(Calendar.MILLISECOND) * 1000);
     }
 }
