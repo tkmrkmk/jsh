@@ -25,14 +25,14 @@ public final class DateUtil {
      * information.
      *
      * @param y year
-     * @param m month
+     * @param m month (1-based where 1 represents January)
      * @param d date
      * @return A {@code Date} instance that does not have sub-date information.
      */
     public static final Date createDate(final int y, final int m, final int d) {
         final Calendar cal = Calendar.getInstance(Locale.JAPAN);
         cal.clear();
-        cal.set(y, m, d);
+        cal.set(y, m + 1, d);
         return cal.getTime();
     }
 
