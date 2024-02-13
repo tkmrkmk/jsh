@@ -51,26 +51,77 @@ public final class ValidationUtil {
 
     // methods for other primitive types
 
+    /**
+     * Validate {@code n} is a positive number (including 0). c.f.
+     * {@link jsh.utils.ValidationUtil#requireNaturalNumber(long, String)}
+     * 
+     * @param n the number to validate.
+     * @param message message for an error thrown when {@code n} is not positive number.
+     * @return the validated number.
+     * @throws NonNaturalNumberException when {@code n} is not a natural number.
+     */
     public static int requireNaturalNumber(final int n, final String message) {
         return (int) requireNaturalNumber((long) n, message);
     }
 
+    /**
+     * Validate {@code n} is a positive number (including 0). c.f.
+     * {@link jsh.utils.ValidationUtil#requireNaturalNumber(long, String)}
+     * 
+     * @param n the number to validate.
+     * @param message message for an error thrown when {@code n} is not positive number.
+     * @return the validated number.
+     * @throws NonNaturalNumberException when {@code n} is not a natural number.
+     */
     public static short requireNaturalNumber(final short n, final String message) {
         return (short) requireNaturalNumber((long) n, message);
     }
 
+    /**
+     * Validate {@code n} is a positive number (including 0). c.f.
+     * {@link jsh.utils.ValidationUtil#requireNaturalNumber(long, String)}
+     * 
+     * @param n the number to validate.
+     * @param message message for an error thrown when {@code n} is not positive number.
+     * @return the validated number.
+     * @throws NonNaturalNumberException when {@code n} is not a natural number.
+     */
     public static byte requireNaturalNumber(final byte n, final String message) {
         return (byte) requireNaturalNumber((long) n, message);
     }
 
+    /**
+     * Validate {@code n} is a positive number (including 0). c.f.
+     * {@link jsh.utils.ValidationUtil#requireNaturalNumber(long, String)}
+     * 
+     * @param n the number to validate.
+     * @return the validated number.
+     * @throws NonNaturalNumberException when {@code n} is not a natural number.
+     */
     public static int requireNaturalNumber(final int n) {
         return (int) requireNaturalNumber((long) n);
     }
 
+    /**
+     * Validate {@code n} is a positive number (including 0). c.f.
+     * {@link jsh.utils.ValidationUtil#requireNaturalNumber(long, String)}
+     * 
+     * @param n the number to validate.
+     * @return the validated number.
+     * @throws NonNaturalNumberException when {@code n} is not a natural number.
+     */
     public static short requireNaturalNumber(final short n) {
         return (short) requireNaturalNumber((long) n);
     }
 
+    /**
+     * Validate {@code n} is a positive number (including 0). c.f.
+     * {@link jsh.utils.ValidationUtil#requireNaturalNumber(long, String)}
+     * 
+     * @param n the number to validate.
+     * @return the validated number.
+     * @throws NonNaturalNumberException when {@code n} is not a natural number.
+     */
     public static byte requireNaturalNumber(final byte n) {
         return (byte) requireNaturalNumber((long) n);
     }
