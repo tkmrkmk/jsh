@@ -1,6 +1,6 @@
-package jsh.example.structs.fruit;
+package jsh.structs.fruit;
 
-import jsh.example.structs.item.Item;
+import jsh.structs.item.Item;
 import lombok.Getter;
 
 @Getter

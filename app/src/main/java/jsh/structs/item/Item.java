@@ -1,4 +1,4 @@
-package jsh.example.structs.item;
+package jsh.structs.item;
 
 import java.util.Comparator;
 import lombok.Getter;
