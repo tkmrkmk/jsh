@@ -36,6 +36,45 @@ public final class DateUtil {
         return cal.getTime();
     }
 
+    public static final Date createDate(final int y, final int m, final int d, final int hour,
+            final int minute) {
+        final Calendar cal = Calendar.getInstance(Locale.JAPAN);
+        cal.clear();
+        cal.set(Calendar.YEAR, y);
+        cal.set(Calendar.MONTH, m);
+        cal.set(Calendar.DAY_OF_MONTH, d);
+        cal.set(Calendar.HOUR_OF_DAY, hour);
+        cal.set(Calendar.MINUTE, minute);
+        return cal.getTime();
+    }
+
+    public static final Date createDate(final int y, final int m, final int d, final int hour,
+            final int minute, final int second) {
+        final Calendar cal = Calendar.getInstance(Locale.JAPAN);
+        cal.clear();
+        cal.set(Calendar.YEAR, y);
+        cal.set(Calendar.MONTH, m);
+        cal.set(Calendar.DAY_OF_MONTH, d);
+        cal.set(Calendar.HOUR_OF_DAY, hour);
+        cal.set(Calendar.MINUTE, minute);
+        cal.set(Calendar.SECOND, second);
+        return cal.getTime();
+    }
+
+    public static final Date createDate(final int y, final int m, final int d, final int hour,
+            final int minute, final int second, final int millisecond) {
+        final Calendar cal = Calendar.getInstance(Locale.JAPAN);
+        cal.clear();
+        cal.set(Calendar.YEAR, y);
+        cal.set(Calendar.MONTH, m);
+        cal.set(Calendar.DAY_OF_MONTH, d);
+        cal.set(Calendar.HOUR_OF_DAY, hour);
+        cal.set(Calendar.MINUTE, minute);
+        cal.set(Calendar.SECOND, second);
+        cal.set(Calendar.MILLISECOND, millisecond);
+        return cal.getTime();
+    }
+
     /**
      * Truncate sub-date (hour, minutes, etc.) information from {@code Date} instance and return it.
      *
@@ -83,16 +122,24 @@ public final class DateUtil {
                 cal.get(Calendar.DAY_OF_MONTH));
     }
 
-    public static final LocalDate toLocalDate(final LocalDateTime date) {
-        return date.toLocalDate();
-    }
-
+    /**
+     * Convert a {@code Date} instance into {@code LocalTime}.
+     * 
+     * @param date a {@code Date} instance to convert.
+     * @return a converted {@code LocalTime} instance.
+     */
     public static final LocalTime toLocalTime(final Date date) {
         final Calendar cal = toCalendar(date);
         return LocalTime.of(cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE),
                 cal.get(Calendar.SECOND), cal.get(Calendar.MILLISECOND) * 1000);
     }
 
+    /**
+     * Convert a {@code Date} instance into {@code LocalDateTime}.
+     * 
+     * @param date a {@code Date} instance to convert.
+     * @return a converted {@code LocalDateTime} instance.
+     */
     public static final LocalDateTime toLocalDateTime(final Date date) {
         final Calendar cal = toCalendar(date);
         return LocalDateTime.of(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH),
