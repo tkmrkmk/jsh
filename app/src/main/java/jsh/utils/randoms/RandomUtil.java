@@ -1,4 +1,4 @@
-package jsh.utils;
+package jsh.utils.randoms;
 
 import java.util.Collection;
 import java.util.Random;

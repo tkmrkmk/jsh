@@ -1,4 +1,4 @@
-package jsh.utils;
+package jsh.utils.validations;
 
 import jsh.utils.exceptions.NonNaturalNumberException;
 import jsh.utils.exceptions.NonPositiveNumberException;
@@ -53,7 +53,7 @@ public final class ValidationUtil {
 
     /**
      * Validate {@code n} is a positive number (including 0). c.f.
-     * {@link jsh.utils.ValidationUtil#requireNaturalNumber(long, String)}
+     * {@link jsh.utils.validations.ValidationUtil#requireNaturalNumber(long, String)}
      * 
      * @param n the number to validate.
      * @param message message for an error thrown when {@code n} is not positive number.
@@ -66,7 +66,7 @@ public final class ValidationUtil {
 
     /**
      * Validate {@code n} is a positive number (including 0). c.f.
-     * {@link jsh.utils.ValidationUtil#requireNaturalNumber(long, String)}
+     * {@link jsh.utils.validations.ValidationUtil#requireNaturalNumber(long, String)}
      * 
      * @param n the number to validate.
      * @param message message for an error thrown when {@code n} is not positive number.
@@ -79,7 +79,7 @@ public final class ValidationUtil {
 
     /**
      * Validate {@code n} is a positive number (including 0). c.f.
-     * {@link jsh.utils.ValidationUtil#requireNaturalNumber(long, String)}
+     * {@link jsh.utils.validations.ValidationUtil#requireNaturalNumber(long, String)}
      * 
      * @param n the number to validate.
      * @param message message for an error thrown when {@code n} is not positive number.
@@ -92,7 +92,7 @@ public final class ValidationUtil {
 
     /**
      * Validate {@code n} is a positive number (including 0). c.f.
-     * {@link jsh.utils.ValidationUtil#requireNaturalNumber(long, String)}
+     * {@link jsh.utils.validations.ValidationUtil#requireNaturalNumber(long, String)}
      * 
      * @param n the number to validate.
      * @return the validated number.
@@ -104,7 +104,7 @@ public final class ValidationUtil {
 
     /**
      * Validate {@code n} is a positive number (including 0). c.f.
-     * {@link jsh.utils.ValidationUtil#requireNaturalNumber(long, String)}
+     * {@link jsh.utils.validations.ValidationUtil#requireNaturalNumber(long, String)}
      * 
      * @param n the number to validate.
      * @return the validated number.
@@ -116,7 +116,7 @@ public final class ValidationUtil {
 
     /**
      * Validate {@code n} is a positive number (including 0). c.f.
-     * {@link jsh.utils.ValidationUtil#requireNaturalNumber(long, String)}
+     * {@link jsh.utils.validations.ValidationUtil#requireNaturalNumber(long, String)}
      * 
      * @param n the number to validate.
      * @return the validated number.
@@ -127,7 +127,7 @@ public final class ValidationUtil {
     }
 
     /**
-     * c.f. {@link jsh.utils.ValidationUtil#requirePositiveNumber(long, String)}.
+     * c.f. {@link jsh.utils.validations.ValidationUtil#requirePositiveNumber(long, String)}.
      * 
      * @param n the number to validate.
      * @param message message for an error thrown when {@code n} is not positive number.
@@ -139,7 +139,7 @@ public final class ValidationUtil {
     }
 
     /**
-     * c.f. {@link jsh.utils.ValidationUtil#requirePositiveNumber(long, String)}.
+     * c.f. {@link jsh.utils.validations.ValidationUtil#requirePositiveNumber(long, String)}.
      * 
      * @param n the number to validate.
      * @param message message for an error thrown when {@code n} is not positive number.
@@ -151,7 +151,7 @@ public final class ValidationUtil {
     }
 
     /**
-     * c.f. {@link jsh.utils.ValidationUtil#requirePositiveNumber(long, String)}.
+     * c.f. {@link jsh.utils.validations.ValidationUtil#requirePositiveNumber(long, String)}.
      * 
      * @param n the number to validate.
      * @param message message for an error thrown when {@code n} is not positive number.
@@ -163,7 +163,7 @@ public final class ValidationUtil {
     }
 
     /**
-     * c.f. {@link jsh.utils.ValidationUtil#requirePositiveNumber(long)}.
+     * c.f. {@link jsh.utils.validations.ValidationUtil#requirePositiveNumber(long)}.
      * 
      * @param n the number to validate.
      * @return the validated number.
@@ -174,7 +174,7 @@ public final class ValidationUtil {
     }
 
     /**
-     * c.f. {@link jsh.utils.ValidationUtil#requirePositiveNumber(long)}.
+     * c.f. {@link jsh.utils.validations.ValidationUtil#requirePositiveNumber(long)}.
      * 
      * @param n the number to validate.
      * @return the validated number.
@@ -185,7 +185,7 @@ public final class ValidationUtil {
     }
 
     /**
-     * c.f. {@link jsh.utils.ValidationUtil#requirePositiveNumber(long)}.
+     * c.f. {@link jsh.utils.validations.ValidationUtil#requirePositiveNumber(long)}.
      * 
      * @param n the number to validate.
      * @return the validated number.

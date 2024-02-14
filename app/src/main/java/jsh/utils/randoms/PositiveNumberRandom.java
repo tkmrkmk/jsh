@@ -1,9 +1,10 @@
-package jsh.utils;
+package jsh.utils.randoms;
 
 import java.util.Objects;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 import jsh.utils.exceptions.NonPositiveNumberException;
+import jsh.utils.validations.ValidationUtil;
 
 /**
  * Utility for generating random positive integers under given conditions.
