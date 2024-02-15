@@ -21,7 +21,7 @@ public class PositiveNumberRandomTest {
         assertThrows(NonPositiveNumberException.class, () -> PositiveNumberRandom.of(-1, 0, null));
         assertThrows(NonPositiveNumberException.class, () -> PositiveNumberRandom.of(0, -1, null));
 
-        Random r = ThreadLocalRandom.current();
+        final Random r = ThreadLocalRandom.current();
         PositiveNumberRandom.of(1, 1, r);
         PositiveNumberRandom.of(1000, 4000, r);
         PositiveNumberRandom.of(100, 1000, r);
@@ -42,7 +42,7 @@ public class PositiveNumberRandomTest {
 
     @Test
     void usage_withoutVariation() {
-        var r = PositiveNumberRandom.of(1000, 1000);
+        final var r = PositiveNumberRandom.of(1000, 1000);
         for (int i = 0; i < 1000; i++) {
             assertEquals(1000, r.nextInt());
         }
@@ -50,20 +50,20 @@ public class PositiveNumberRandomTest {
 
     @Test
     void usage_withVariation() {
-        var r = PositiveNumberRandom.getDefault();
+        final var r = PositiveNumberRandom.getDefault();
         for (int i = 0; i < 1000; i++) {
-            int n = r.nextInt();
+            final int n = r.nextInt();
             assertTrue(n >= 0 && n <= 100);
         }
     }
 
     @Test
     void usage_withSameSeededRandom() {
-        var r1 = new Random(0xabcdefL);
-        var pr1 = PositiveNumberRandom.of(0, 100, r1);
+        final var r1 = new Random(0xabcdefL);
+        final var pr1 = PositiveNumberRandom.of(0, 100, r1);
 
-        var r2 = new Random(0xabcdefL);
-        var pr2 = PositiveNumberRandom.of(0, 100, r2);
+        final var r2 = new Random(0xabcdefL);
+        final var pr2 = PositiveNumberRandom.of(0, 100, r2);
 
         for (int i = 0; i < 1000; i++) {
             assertEquals(pr1.nextInt(), pr2.nextInt());

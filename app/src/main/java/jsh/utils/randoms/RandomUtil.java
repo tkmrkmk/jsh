@@ -8,14 +8,14 @@ import java.util.concurrent.ThreadLocalRandom;
 public final class RandomUtil {
     private RandomUtil() {}
 
-    public static <T> T pickRandom(Set<T> set) {
+    public static <T> T pickRandom(final Set<T> set) {
         return pickRandom(set, ThreadLocalRandom.current());
     }
 
-    public static <T> T pickRandom(Collection<T> collection, final Random random) {
+    public static <T> T pickRandom(final Collection<T> collection, final Random random) {
         final int ti = random.nextInt(collection.size());
         int i = 0;
-        for (T e : collection) {
+        for (final T e : collection) {
             if (i++ == ti) {
                 return e;
             }
@@ -23,7 +23,7 @@ public final class RandomUtil {
         throw new RuntimeException("Something went wrong while randomly picking one from set.");
     }
 
-    public static <T> T pickRandom(Collection<T> c) {
+    public static <T> T pickRandom(final Collection<T> c) {
         return pickRandom(c, ThreadLocalRandom.current());
     }
 }
