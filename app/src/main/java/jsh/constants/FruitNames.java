@@ -1,7 +1,7 @@
-package jsh.example.constants;
+package jsh.constants;
 
 import java.util.Set;
-import jsh.utils.RandomUtil;
+import jsh.utils.randoms.RandomUtil;
 import lombok.Getter;
 
 public class FruitNames {

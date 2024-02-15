@@ -1,4 +1,4 @@
-package jsh.example.structs.item;
+package jsh.structs.item;
 
 import java.util.Comparator;
 import lombok.Getter;
@@ -9,7 +9,7 @@ public class Item implements Comparable<Item> {
     protected int price;
     protected String name;
 
-    public Item(int price, @NonNull final String name) {
+    public Item(final int price, @NonNull final String name) {
         this.price = price;
         this.name = name;
     }
@@ -19,7 +19,7 @@ public class Item implements Comparable<Item> {
     public static final Comparator<Item> itemNameComparator = (t, o) -> t.name.compareTo(o.name);
 
     @Override
-    public int compareTo(Item o) {
+    public int compareTo(final Item o) {
         return this.name.compareTo(o.name);
     }
 }

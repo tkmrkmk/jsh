@@ -9,15 +9,15 @@ public class NonPositiveNumberException extends IllegalArgumentException {
         super();
     }
 
-    public NonPositiveNumberException(String message) {
+    public NonPositiveNumberException(final String message) {
         super(message);
     }
 
-    public NonPositiveNumberException(String message, Throwable cause) {
+    public NonPositiveNumberException(final String message, final Throwable cause) {
         super(message, cause);
     }
 
-    public NonPositiveNumberException(Throwable cause) {
+    public NonPositiveNumberException(final Throwable cause) {
         super(cause);
     }
 }

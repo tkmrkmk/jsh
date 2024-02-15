@@ -8,12 +8,21 @@
 
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
-    id 'application'
+    // id 'application'
+    id 'java'
 }
 
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
+}
+
+sourceSets {
+    main{
+        java {
+            srcDirs += ['src/example/java']
+        }
+    }
 }
 
 dependencies {
@@ -28,10 +37,10 @@ dependencies {
 	testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
 }
 
-application {
-    // Define the main class for the application.
-    mainClass = 'jsh.App'
-}
+// application {
+//     // Define the main class for the application.
+//     mainClass = 'jsh.App'
+// }
 
 tasks.named('test') {
     // Use JUnit Platform for unit tests.

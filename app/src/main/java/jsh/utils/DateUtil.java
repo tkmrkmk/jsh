@@ -100,7 +100,7 @@ public final class DateUtil {
 
     /**
      * Convert a {@code Date} instance into a {@code Calendar} instance.
-     * 
+     *
      * @param date the {@code Date} instance to convert from.
      * @return a converted {@code Calendar} instance.
      */
@@ -112,7 +112,7 @@ public final class DateUtil {
 
     /**
      * Convert a {@code Date} instance into {@code LocalDate}.
-     * 
+     *
      * @param date a {@code Date} instance to convert.
      * @return a converted {@code LocalDate} instance.
      */
@@ -124,7 +124,7 @@ public final class DateUtil {
 
     /**
      * Convert a {@code Date} instance into {@code LocalTime}.
-     * 
+     *
      * @param date a {@code Date} instance to convert.
      * @return a converted {@code LocalTime} instance.
      */
@@ -136,7 +136,7 @@ public final class DateUtil {
 
     /**
      * Convert a {@code Date} instance into {@code LocalDateTime}.
-     * 
+     *
      * @param date a {@code Date} instance to convert.
      * @return a converted {@code LocalDateTime} instance.
      */
@@ -144,7 +144,7 @@ public final class DateUtil {
         final Calendar cal = toCalendar(date);
         return LocalDateTime.of(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH),
                 cal.get(Calendar.DAY_OF_MONTH), cal.get(Calendar.HOUR_OF_DAY),
-                cal.get(Calendar.MINUTE),
-                cal.get(Calendar.SECOND), cal.get(Calendar.MILLISECOND) * 1000);
+                cal.get(Calendar.MINUTE), cal.get(Calendar.SECOND),
+                cal.get(Calendar.MILLISECOND) * 1000);
     }
 }
