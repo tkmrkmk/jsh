@@ -18,18 +18,16 @@
   "java.inlayHints.parameterNames.enabled": "none",
   "java.saveActions.organizeImports": true,
   "java.cleanup.actionsOnSave": [
-    "addDeprecated",
-    "addFinalModifier",
-    "addOverride",
-    "instanceofPatternMatch",
-    "invertEquals",
-    "lambdaExpression",
-    "lambdaExpressionFromAnonymousClass",
-    "qualifyMembers",
-    "qualifyStaticMembers",
-    "stringConcatToTextBlock",
-    "switchExpression",
-    "tryWithResource"
+      "addDeprecated",
+      "addFinalModifier",
+      "addOverride",
+      "instanceofPatternMatch",
+      "invertEquals",
+      "lambdaExpression",
+      "lambdaExpressionFromAnonymousClass",
+      "stringConcatToTextBlock",
+      "switchExpression",
+      "tryWithResource"
   ],
   "cSpell.words": ["xabcdef"]
 }
