@@ -36,7 +36,7 @@ public final class PositiveNumberRandom {
      * <li>max = 100</li>
      * <li>random = ThreadLocalRandom.current()</li>
      * </ul>
-     * 
+     *
      * @return the configured {@code Random} instance with conditions stated.
      */
     public static final PositiveNumberRandom getDefault() {
@@ -50,7 +50,7 @@ public final class PositiveNumberRandom {
      * @param max the maximum number (inclusive unlike {@link java.util.Random#nextInt(int)})
      * @param random a {@code Random} instance to use
      * @return a pre-configured {@code Random} instance
-     * 
+     *
      * @throws IllegalArgumentException when {@code max} is less than {@code min}.
      * @throws NonPositiveNumberException when either {@code min} or {@code max} is less than or
      *         equal to 0.
@@ -66,7 +66,7 @@ public final class PositiveNumberRandom {
      * @param min the minimum number (inclusive)
      * @param max the maximum number (inclusive unlike {@link java.util.Random#nextInt(int)})
      * @return a pre-configured {@code Random} instance
-     * 
+     *
      * @throws IllegalArgumentException when {@code max} is less than {@code min}.
      * @throws NonPositiveNumberException when either {@code min} or {@code max} is less than or
      *         equal to 0.

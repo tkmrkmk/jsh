@@ -9,15 +9,15 @@ public class NonNaturalNumberException extends IllegalArgumentException {
         super();
     }
 
-    public NonNaturalNumberException(String message) {
+    public NonNaturalNumberException(final String message) {
         super(message);
     }
 
-    public NonNaturalNumberException(String message, Throwable cause) {
+    public NonNaturalNumberException(final String message, final Throwable cause) {
         super(message, cause);
     }
 
-    public NonNaturalNumberException(Throwable cause) {
+    public NonNaturalNumberException(final Throwable cause) {
         super(cause);
     }
 }
