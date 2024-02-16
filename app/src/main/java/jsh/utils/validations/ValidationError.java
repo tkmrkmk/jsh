@@ -7,12 +7,10 @@ public class ValidationError {
     public final String description;
 
     public ValidationError(final String name, final String description) {
-        Objects.requireNonNull(name);
-        Objects.requireNonNull(description);
+        this.name = Objects.requireNonNull(name);
+        this.description = Objects.requireNonNull(description);
         if (name.isBlank()) {
             throw new IllegalArgumentException("Provide name.");
         }
-        this.name = name;
-        this.description = description;
     }
 }
