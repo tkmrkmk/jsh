@@ -1,5 +1,7 @@
 package jsh.structs.fruit;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 import jsh.constants.FruitAdjectives;
@@ -7,14 +9,14 @@ import jsh.constants.FruitNames;
 import jsh.utils.validations.ValidationUtil;
 
 public class FruitFactory {
-    public static final String[] generateRandomAdjectives(final int size) {
+    public static final List<String> generateRandomAdjectives(final int size) {
         ValidationUtil.requireNaturalNumber(size);
 
-        final String[] array = new String[size];
+        final List<String> list = new ArrayList<>(size);
         for (int i = 0; i < size; ++i) {
-            array[i] = FruitAdjectives.getRandom();
+            list.set(i, FruitAdjectives.getRandom());
         }
-        return array;
+        return list;
     }
 
     public static final Fruit generateRandom(final int adjectiveNum) {

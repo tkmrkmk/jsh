@@ -1,15 +1,19 @@
 package jsh.utils.randoms;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Random;
-import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 
 public final class RandomUtil {
     private RandomUtil() {}
 
-    public static <T> T pickRandom(final Set<T> set) {
-        return pickRandom(set, ThreadLocalRandom.current());
+    public static <T> T pickRandom(final List<T> list, final Random random) {
+        return list.get(random.nextInt(list.size()));
+    }
+
+    public static <T> T pickRandom(final List<T> list) {
+        return pickRandom(list, ThreadLocalRandom.current());
     }
 
     public static <T> T pickRandom(final Collection<T> collection, final Random random) {

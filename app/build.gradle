@@ -8,8 +8,14 @@
 
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
-    // id 'application'
+    id 'application'
     id 'java'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
 }
 
 repositories {
@@ -32,15 +38,15 @@ dependencies {
     // Use lombok -- who won't?
 	compileOnly 'org.projectlombok:lombok:1.18.30'
 	annotationProcessor 'org.projectlombok:lombok:1.18.30'
-	
+
 	testCompileOnly 'org.projectlombok:lombok:1.18.30'
 	testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
 }
 
-// application {
-//     // Define the main class for the application.
-//     mainClass = 'jsh.App'
-// }
+application {
+    // Define the main class for the application.
+    mainClass = 'jsh.App'
+}
 
 tasks.named('test') {
     // Use JUnit Platform for unit tests.
