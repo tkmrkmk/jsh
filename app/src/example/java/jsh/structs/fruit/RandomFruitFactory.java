@@ -6,9 +6,10 @@ import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 import jsh.constants.FruitAdjectives;
 import jsh.constants.FruitNames;
+import jsh.structs.fruit.fruit.Fruit;
 import jsh.utils.validations.ValidationUtil;
 
-public class FruitFactory {
+public class RandomFruitFactory {
     public static final List<String> generateRandomAdjectives(final int size) {
         ValidationUtil.requireNaturalNumber(size);
 

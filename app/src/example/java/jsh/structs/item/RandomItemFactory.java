@@ -7,14 +7,14 @@ import jsh.constants.FruitNames;
 import jsh.utils.randoms.PositiveNumberRandom;
 import lombok.NonNull;
 
-public class ItemFactory {
+public class RandomItemFactory {
     private final PositiveNumberRandom random;
 
-    public ItemFactory() {
+    public RandomItemFactory() {
         this.random = PositiveNumberRandom.getDefault();
     }
 
-    public ItemFactory(@NonNull final PositiveNumberRandom cr) {
+    public RandomItemFactory(@NonNull final PositiveNumberRandom cr) {
         Objects.requireNonNull(cr);
         this.random = cr;
     }
