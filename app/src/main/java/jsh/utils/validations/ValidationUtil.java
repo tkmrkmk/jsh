@@ -6,6 +6,14 @@ import jsh.utils.exceptions.NonPositiveNumberException;
 public final class ValidationUtil {
     private ValidationUtil() {}
 
+    /**
+     * Validate {@code n} is a positive number (including 0).
+     *
+     * @param n the number to validate.
+     * @param message message for an error thrown when {@code n} is not positive number.
+     * @return the validated number.
+     * @throws NonNaturalNumberException when {@code n} is not a natural number.
+     */
     public static long requireNaturalNumber(final long n, final String message) {
         if (n > 0) {
             return n;
@@ -13,6 +21,13 @@ public final class ValidationUtil {
         throw new NonNaturalNumberException(message);
     }
 
+    /**
+     * Validate {@code n} is a positive number (including 0).
+     *
+     * @param n the number to validate.
+     * @return the validated number.
+     * @throws NonNaturalNumberException when {@code n} is not a natural number.
+     */
     public static long requireNaturalNumber(final long n) {
         if (n > 0) {
             return n;
