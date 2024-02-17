@@ -7,8 +7,6 @@
         "vscjava.vscode-gradle",
         "aaron-bond.better-comments",
         "redhat.fabric8-analytics",
-        "visualstudioexptteam.vscodeintellicode",
-        "visualstudioexptteam.intellicode-api-usage-examples",
-        "visualstudioexptteam.vscodeintellicode-completions"
+        "vscjava.vscode-java-test"
     ]
 }
