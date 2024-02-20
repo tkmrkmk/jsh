@@ -5,7 +5,6 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Locale;
 
 /**
  * @author zhu2qian1
@@ -19,55 +18,27 @@ public final class DateUtil {
      */
     public static final int DAY_MILLISECONDS = 86400000; // 24 * 60 * 60 * 1000
 
-    /**
-     * Create date from given {@code y}, {@code m}, and {@code d}. <br/>
-     * Note that the created {@code Date} instance does not have sub-date (hour, minutes, etc.)
-     * information.
-     *
-     * @param y year
-     * @param m month (1-based where 1 represents January)
-     * @param d date
-     * @return A {@code Date} instance that does not have sub-date information.
-     */
-    public static final Date createDate(final int y, final int m, final int d) {
-        final Calendar cal = Calendar.getInstance(Locale.JAPAN);
-        cal.clear();
-        cal.set(y, m + 1, d);
-        return cal.getTime();
+    public static final Date createDate(final int year, final int month, final int day) {
+        return createDate(year, month, day, 0, 0, 0, 0);
     }
 
-    public static final Date createDate(final int y, final int m, final int d, final int hour,
-            final int minute) {
-        final Calendar cal = Calendar.getInstance(Locale.JAPAN);
-        cal.clear();
-        cal.set(Calendar.YEAR, y);
-        cal.set(Calendar.MONTH, m);
-        cal.set(Calendar.DAY_OF_MONTH, d);
-        cal.set(Calendar.HOUR_OF_DAY, hour);
-        cal.set(Calendar.MINUTE, minute);
-        return cal.getTime();
+    public static final Date createDate(final int year, final int month, final int day,
+            final int hour, final int minute) {
+        return createDate(year, month, day, hour, minute, 0, 0);
     }
 
-    public static final Date createDate(final int y, final int m, final int d, final int hour,
-            final int minute, final int second) {
-        final Calendar cal = Calendar.getInstance(Locale.JAPAN);
-        cal.clear();
-        cal.set(Calendar.YEAR, y);
-        cal.set(Calendar.MONTH, m);
-        cal.set(Calendar.DAY_OF_MONTH, d);
-        cal.set(Calendar.HOUR_OF_DAY, hour);
-        cal.set(Calendar.MINUTE, minute);
-        cal.set(Calendar.SECOND, second);
-        return cal.getTime();
+    public static final Date createDate(final int year, final int month, final int day,
+            final int hour, final int minute, final int second) {
+        return createDate(year, month, day, hour, minute, second, 0);
     }
 
-    public static final Date createDate(final int y, final int m, final int d, final int hour,
-            final int minute, final int second, final int millisecond) {
-        final Calendar cal = Calendar.getInstance(Locale.JAPAN);
+    public static final Date createDate(final int year, final int month, final int day,
+            final int hour, final int minute, final int second, final int millisecond) {
+        final Calendar cal = Calendar.getInstance();
         cal.clear();
-        cal.set(Calendar.YEAR, y);
-        cal.set(Calendar.MONTH, m);
-        cal.set(Calendar.DAY_OF_MONTH, d);
+        cal.set(Calendar.YEAR, year);
+        cal.set(Calendar.MONTH, month);
+        cal.set(Calendar.DAY_OF_MONTH, day);
         cal.set(Calendar.HOUR_OF_DAY, hour);
         cal.set(Calendar.MINUTE, minute);
         cal.set(Calendar.SECOND, second);
@@ -95,7 +66,7 @@ public final class DateUtil {
      * @return A {@code LocalDateTime} instance without sub-date information.
      */
     public static final LocalDateTime truncateTime(final LocalDateTime date) {
-        return LocalDateTime.of(date.getDayOfYear(), date.getMonth(), date.getDayOfMonth(), 0, 0);
+        return LocalDateTime.of(date.getYear(), date.getMonth(), date.getDayOfMonth(), 0, 0);
     }
 
     /**
