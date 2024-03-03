@@ -14,7 +14,7 @@ public class RandomFruitFactory {
 
         final List<String> list = new ArrayList<>(size);
         for (int i = 0; i < size; ++i) {
-            list.set(i, FruitAdjectives.getRandom());
+            list.add(FruitAdjectives.getRandom());
         }
         return list;
     }
