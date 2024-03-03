@@ -1,10 +1,17 @@
 package jsh.utils.validations;
 
+import java.util.Objects;
 import jsh.utils.exceptions.NonNaturalNumberException;
 import jsh.utils.exceptions.NonPositiveNumberException;
 
 public final class ValidationUtil {
     private ValidationUtil() {}
+
+    public static void validateNonNulls(final Object... os) {
+        for (final var o : os) {
+            Objects.requireNonNull(o);
+        }
+    }
 
     /**
      * Validate {@code n} is a positive number (including 0).
