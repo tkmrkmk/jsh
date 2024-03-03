@@ -9,7 +9,17 @@ import jsh.constants.FruitNames;
 import jsh.utils.validations.ValidationUtil;
 
 public class RandomFruitFactory {
-    public static final List<String> generateRandomAdjectives(final int size) {
+    public final Random random;
+
+    public RandomFruitFactory() {
+        this.random = ThreadLocalRandom.current();
+    }
+
+    public RandomFruitFactory(final Random random) {
+        this.random = random;
+    }
+
+    public final List<String> generateRandomAdjectives(final int size) {
         ValidationUtil.requireNaturalNumber(size);
 
         final List<String> list = new ArrayList<>(size);
@@ -19,11 +29,11 @@ public class RandomFruitFactory {
         return list;
     }
 
-    public static final Fruit generateRandom(final int adjectiveNum) {
+    public final Fruit generateRandom(final int adjectiveNum) {
         return generateRandom(ThreadLocalRandom.current(), adjectiveNum);
     }
 
-    public static final Fruit generateRandom(final Random r, final int adjectiveNum) {
+    public final Fruit generateRandom(final Random r, final int adjectiveNum) {
         ValidationUtil.requireNaturalNumber(adjectiveNum,
                 "Negative number for adjectives doesn't make any sense!");
         if (adjectiveNum == 0) {
