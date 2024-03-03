@@ -1,4 +1,4 @@
-package jsh.structs.fruit.fruit;
+package jsh.structs.fruit;
 
 import java.util.List;
 import jsh.structs.item.Item;
