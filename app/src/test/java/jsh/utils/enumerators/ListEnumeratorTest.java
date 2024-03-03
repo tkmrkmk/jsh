@@ -11,7 +11,7 @@ import jsh.utils.debugging.DebuggingUtil;
 public class ListEnumeratorTest {
     private final Function<EnumerationEntry<?>, String> enumerationEntryStringier = e -> {
         final StringBuilder sb = new StringBuilder();
-        sb.append(e.index).append(" :").append(e.element);
+        sb.append(e.index).append(": ").append(e.element);
         return sb.toString();
     };
 
