@@ -2,8 +2,8 @@ package jsh.util.debugging;
 
 import java.util.List;
 import java.util.function.Function;
-import jsh.structs.fruit.Fruit;
-import jsh.structs.fruit.RandomFruitFactory;
+import jsh.struct.fruit.Fruit;
+import jsh.struct.fruit.RandomFruitFactory;
 import jsh.util.random.PositiveNumberRandom;
 
 public class DebuggingUtilExample {

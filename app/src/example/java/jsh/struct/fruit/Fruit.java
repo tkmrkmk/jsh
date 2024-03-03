@@ -1,7 +1,7 @@
-package jsh.structs.fruit;
+package jsh.struct.fruit;
 
 import java.util.List;
-import jsh.structs.item.Item;
+import jsh.struct.item.Item;
 import lombok.Getter;
 import lombok.NonNull;
 

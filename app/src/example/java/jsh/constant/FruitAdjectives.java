@@ -1,4 +1,4 @@
-package jsh.constants;
+package jsh.constant;
 
 import java.util.Set;
 import jsh.util.random.RandomUtil;

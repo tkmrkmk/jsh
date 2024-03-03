@@ -1,9 +1,9 @@
-package jsh.structs.item;
+package jsh.struct.item;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import jsh.constants.FruitNames;
+import jsh.constant.FruitNames;
 import jsh.util.random.PositiveNumberRandom;
 import lombok.NonNull;
 
