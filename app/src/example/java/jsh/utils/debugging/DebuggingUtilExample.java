@@ -22,7 +22,7 @@ public class DebuggingUtilExample {
         }
     }
 
-    static Function<Fruit, String> fruitStringConverter = f -> {
+    private static final Function<Fruit, String> fruitStringConverter = f -> {
         final StringBuilder sb = new StringBuilder();
         sb.append("- ");
 
@@ -31,7 +31,7 @@ public class DebuggingUtilExample {
         return sb.toString();
     };
 
-    static void createAdjectivesString(final StringBuilder sb, final Fruit f) {
+    private static final void createAdjectivesString(final StringBuilder sb, final Fruit f) {
         final List<String> adjectives = f.getAdjectives();
 
         for (int i = 0, len = adjectives.size(); i < len; ++i) {
