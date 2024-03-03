@@ -10,50 +10,60 @@ import java.util.function.Supplier;
 import jsh.utils.validations.ValidationUtil;
 
 public class RandomCollectionGenerator {
-    public static final <T> List<T> createListOf(final int size, final Supplier<T> supplier) {
-        return RandomCollectionGenerator.createListOf(size, supplier, ArrayList::new);
+    public static final <T> List<T> createListOf(final int size,
+            final Supplier<T> randomElementSupplier) {
+        return RandomCollectionGenerator.createListOf(size, randomElementSupplier, ArrayList::new);
     }
 
-    public static final <T> List<T> createListOf(final int size, final Supplier<T> supplier,
-            final Supplier<List<T>> listSupplier) {
-        ValidationUtil.requireNaturalNumber(size);
-        Objects.requireNonNull(supplier);
-        Objects.requireNonNull(listSupplier);
+    public static final <T> List<T> createListOf(final int size,
+            final Supplier<T> randomElementSupplier, final Supplier<List<T>> listSupplier) {
+        validateArgs(size, randomElementSupplier, listSupplier);
 
         final List<T> list = listSupplier.get();
         for (int i = 0; i < size; i++) {
-            list.set(i, supplier.get());
+            list.set(i, randomElementSupplier.get());
         }
         return list;
     }
 
-    public static final <T> Set<T> createSetOf(final int size, final Supplier<T> supplier) {
-        return createSetOf(size, supplier, HashSet::new);
+    public static final <T> Set<T> createSetOf(final int size,
+            final Supplier<T> randomElementSupplier) {
+        return createSetOf(size, randomElementSupplier, HashSet::new);
     }
 
-    public static final <T> Set<T> createSetOf(final int size, final Supplier<T> supplier,
-            final Supplier<Set<T>> setSupplier) {
-        ValidationUtil.requireNaturalNumber(size);
-        Objects.requireNonNull(supplier);
-        Objects.requireNonNull(setSupplier);
+    public static final <T> Set<T> createSetOf(final int size,
+            final Supplier<T> randomElementSupplier, final Supplier<Set<T>> setSupplier) {
+        validateArgs(size, randomElementSupplier, setSupplier);
 
         final Set<T> set = setSupplier.get();
         for (int i = 0; i < size; i++) {
-            set.add(supplier.get());
+            set.add(randomElementSupplier.get());
         }
         return set;
     }
 
-    public static final <T> Collection<T> createCollectionOf(final int size, final Supplier<T> supplier,
+
+    public static final <T> Collection<T> createCollectionOf(final int size,
+            final Supplier<T> randomElementSupplier) {
+        return createCollectionOf(size, randomElementSupplier, ArrayList::new);
+    }
+
+    public static final <T> Collection<T> createCollectionOf(final int size,
+            final Supplier<T> randomElementSupplier,
             final Supplier<Collection<T>> collectionSupplier) {
-        ValidationUtil.requireNaturalNumber(size);
-        Objects.requireNonNull(supplier);
-        Objects.requireNonNull(collectionSupplier);
+        validateArgs(size, randomElementSupplier, collectionSupplier);
 
         final Collection<T> collection = collectionSupplier.get();
         for (int i = 0; i < size; i++) {
-            collection.add(supplier.get());
+            collection.add(randomElementSupplier.get());
         }
         return collection;
+    }
+
+    private static final void validateArgs(final int size, final Supplier<?>... suppliers) {
+        ValidationUtil.requireNaturalNumber(size);
+        for (final var supplier : suppliers) {
+            Objects.requireNonNull(supplier);
+        }
     }
 }
