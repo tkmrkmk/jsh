@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 import java.util.function.Supplier;
-import jsh.utils.validations.ValidationUtil;
+import jsh.utils.validations.validators.IntValidator;
 
 public class RandomCollectionGenerator {
     public static final <T> List<T> createListOf(final int size,
@@ -61,7 +61,7 @@ public class RandomCollectionGenerator {
     }
 
     private static final void validateArgs(final int size, final Supplier<?>... suppliers) {
-        ValidationUtil.requireNaturalNumber(size);
+        IntValidator.requireNaturalNumber(size);
         for (final var supplier : suppliers) {
             Objects.requireNonNull(supplier);
         }

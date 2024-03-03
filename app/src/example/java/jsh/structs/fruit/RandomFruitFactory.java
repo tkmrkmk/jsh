@@ -2,25 +2,25 @@ package jsh.structs.fruit;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 import jsh.constants.FruitAdjectives;
 import jsh.constants.FruitNames;
-import jsh.utils.validations.ValidationUtil;
+import jsh.utils.randoms.PositiveNumberRandom;
+import jsh.utils.validations.validators.IntValidator;
+import lombok.NonNull;
 
 public class RandomFruitFactory {
-    public final Random random;
+    public final PositiveNumberRandom random;
 
     public RandomFruitFactory() {
-        this.random = ThreadLocalRandom.current();
+        this.random = PositiveNumberRandom.of(100, 10000);
     }
 
-    public RandomFruitFactory(final Random random) {
+    public RandomFruitFactory(@NonNull final PositiveNumberRandom random) {
         this.random = random;
     }
 
     public final List<String> generateRandomAdjectives(final int size) {
-        ValidationUtil.requireNaturalNumber(size);
+        IntValidator.requireNaturalNumber(size);
 
         final List<String> list = new ArrayList<>(size);
         for (int i = 0; i < size; ++i) {
@@ -30,16 +30,12 @@ public class RandomFruitFactory {
     }
 
     public final Fruit generateRandom(final int adjectiveNum) {
-        return generateRandom(ThreadLocalRandom.current(), adjectiveNum);
-    }
-
-    public final Fruit generateRandom(final Random r, final int adjectiveNum) {
-        ValidationUtil.requireNaturalNumber(adjectiveNum,
+        IntValidator.requireNaturalNumber(adjectiveNum,
                 "Negative number for adjectives doesn't make any sense!");
         if (adjectiveNum == 0) {
-            return new Fruit(r.nextInt(1000) + 101, FruitNames.getRandom());
+            return new Fruit(random.nextInt(), FruitNames.getRandom());
         }
-        return new Fruit(r.nextInt(1000) + 101, FruitNames.getRandom(),
+        return new Fruit(random.nextInt(), FruitNames.getRandom(),
                 generateRandomAdjectives(adjectiveNum));
     }
 }
