@@ -1,7 +1,9 @@
 package jsh.utils.validations;
 
 import java.util.List;
+import lombok.Getter;
 
+@Getter
 public class ValidationResult {
     public final boolean result;
     public final List<ValidationError> errors;

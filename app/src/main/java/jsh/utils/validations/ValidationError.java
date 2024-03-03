@@ -1,7 +1,9 @@
 package jsh.utils.validations;
 
 import java.util.Objects;
+import lombok.Getter;
 
+@Getter
 public class ValidationError {
     public final String name;
     public final String description;
