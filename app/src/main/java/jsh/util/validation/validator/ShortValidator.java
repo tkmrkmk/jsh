@@ -1,4 +1,4 @@
-package jsh.util.validations.validators;
+package jsh.util.validation.validator;
 
 import java.util.Objects;
 import jsh.util.exception.NonNaturalNumberException;
@@ -22,8 +22,8 @@ public class ShortValidator {
      * @param message message for an error thrown when {@code n} is not a positive number
      * @return the validated number (i.e. {@code n} itself)
      * @throws NonPositiveNumberException when {@code n} is not a positive number
-     * @see jsh.util.validations.ValidationUtil#requirePositiveNumber(long, String)
-     * @see jsh.util.validations.validators.ShortValidator#requireNaturalNumber(short, String)
+     * @see jsh.util.validation.ValidationUtil#requirePositiveNumber(long, String)
+     * @see jsh.util.validation.validator.ShortValidator#requireNaturalNumber(short, String)
      */
     public static short requirePositiveNumber(final short n, final String message) {
         if (isPositive(n)) {
@@ -39,8 +39,8 @@ public class ShortValidator {
      * @param n the short to validate
      * @return the validated number (i.e. {@code n} itself)
      * @throws NonPositiveNumberException when {@code n} is not a positive number
-     * @see jsh.util.validations.ValidationUtil#requirePositiveNumber(long)
-     * @see jsh.util.validations.validators.ShortValidator#requireNaturalNumber(short)
+     * @see jsh.util.validation.ValidationUtil#requirePositiveNumber(long)
+     * @see jsh.util.validation.validator.ShortValidator#requireNaturalNumber(short)
      */
     public static short requirePositiveNumber(final short n) {
         return requirePositiveNumber(n, null);
@@ -53,8 +53,8 @@ public class ShortValidator {
      * @param message the message for the error thrown when {@code n} is not a natural number
      * @return the validated number (i.e. {@code n} itself)
      * @throws NonNaturalNumberException when {@code n} is not a natural number
-     * @see jsh.util.validations.ValidationUtil#requireNaturalNumber(long, String)
-     * @see jsh.util.validations.validators.ShortValidator#requirePositiveNumber(short, String)
+     * @see jsh.util.validation.ValidationUtil#requireNaturalNumber(long, String)
+     * @see jsh.util.validation.validator.ShortValidator#requirePositiveNumber(short, String)
      */
     public static short requireNaturalNumber(final short n, final String message) {
         if (isNatural(n)) {
@@ -70,8 +70,8 @@ public class ShortValidator {
      * @param n the short to validate
      * @return the validated number (i.e. {@code n} itself)
      * @throws NonNaturalNumberException when {@code n} is not a natural number
-     * @see jsh.util.validations.ValidationUtil#requireNaturalNumber(long)
-     * @see jsh.util.validations.validators.ShortValidator#requirePositiveNumber(short)
+     * @see jsh.util.validation.ValidationUtil#requireNaturalNumber(long)
+     * @see jsh.util.validation.validator.ShortValidator#requirePositiveNumber(short)
      */
     public static short requireNaturalNumber(final short n) {
         return requireNaturalNumber(n, null);

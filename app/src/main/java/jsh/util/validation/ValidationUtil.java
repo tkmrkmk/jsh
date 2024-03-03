@@ -1,4 +1,4 @@
-package jsh.util.validations;
+package jsh.util.validation;
 
 import java.util.Objects;
 

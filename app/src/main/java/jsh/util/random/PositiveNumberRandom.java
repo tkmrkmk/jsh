@@ -4,7 +4,7 @@ import java.util.Objects;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 import jsh.util.exception.NonPositiveNumberException;
-import jsh.util.validations.validators.IntValidator;
+import jsh.util.validation.validator.IntValidator;
 
 /**
  * Utility for generating random positive integers under given conditions.

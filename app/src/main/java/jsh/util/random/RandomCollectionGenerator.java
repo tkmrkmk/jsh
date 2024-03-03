@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 import java.util.function.Supplier;
-import jsh.util.validations.validators.IntValidator;
+import jsh.util.validation.validator.IntValidator;
 
 public class RandomCollectionGenerator {
     public static final <T> List<T> createListOf(final int size,
