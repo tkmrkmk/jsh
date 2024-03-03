@@ -7,6 +7,16 @@
     "files.watcherExclude": {
         "**/target": true
     },
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/bin": true,
+        "**/build": true
+    },
     "java.autobuild.enabled": true,
     "java.cleanup.actions": [
         "addDeprecated",
