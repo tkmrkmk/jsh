@@ -14,7 +14,7 @@ public class DateUtilTest {
     }
 
     @Test
-    void test_createDate() {
+    void create_date() {
         sep("createDate");
         final var d1 = DateUtil.createDate(1999, 12, 31);
         final var d2 = DateUtil.createDate(1999, 12, 31);
@@ -26,7 +26,7 @@ public class DateUtilTest {
     }
 
     @Test
-    void truncateTime() {
+    void truncate_time() {
         System.out.println("---- truncateTime ----");
         final Date today = new Date();
         final Date truncated = DateUtil.truncateTime(today);
@@ -42,7 +42,7 @@ public class DateUtilTest {
     }
 
     @Test
-    void toLocalDateTime() {
+    void to_LocalDateTime() {
         System.out.println("---- toLocalDateTime ----");
         final var date = DateUtil.createDate(1999, 10, 29, 20, 59, 50);
         final var ldt1 = DateUtil.toLocalDateTime(date);
@@ -53,7 +53,7 @@ public class DateUtilTest {
     }
 
     @Test
-    void toLocalTime() {
+    void to_LocalTime() {
         System.out.println("---- toLocalTime ----");
         final var date = DateUtil.createDate(1999, 10, 29, 23, 59, 58, 570);
         final var lt1 = DateUtil.toLocalTime(date);
