@@ -13,8 +13,6 @@ public final class PositiveNumberRandom {
     public final int min;
     public final int max;
     public final Random random;
-
-    /** variation. */
     private final int variation;
 
     private PositiveNumberRandom(final int min, final int max, final Random random) {
