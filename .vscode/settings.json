@@ -28,7 +28,7 @@
     "java.completion.enabled": true,
     "java.completion.matchCase": "firstLetter",
     "java.configuration.runtimes": [],
-    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.configuration.updateBuildConfiguration": "interactive",
     "java.dependency.packagePresentation": "hierarchical",
     "java.format.enabled": true,
     "java.format.onType.enabled": true,
