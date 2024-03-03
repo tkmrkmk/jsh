@@ -4,7 +4,7 @@ import java.util.Objects;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 import jsh.utils.exceptions.NonPositiveNumberException;
-import jsh.utils.validations.ValidationUtil;
+import jsh.utils.validations.validators.IntValidator;
 
 /**
  * Utility for generating random positive integers under given conditions.
@@ -16,10 +16,10 @@ public final class PositiveNumberRandom {
     private final int variation;
 
     private PositiveNumberRandom(final int min, final int max, final Random random) {
-        this.min = ValidationUtil.requirePositiveNumber(min,
-                "Min must be greater than or equal to 0.");
-        this.max = ValidationUtil.requirePositiveNumber(max,
-                "Max must be greater than or equal to 0.");
+        this.min =
+                IntValidator.requirePositiveNumber(min, "Min must be greater than or equal to 0.");
+        this.max =
+                IntValidator.requirePositiveNumber(max, "Max must be greater than or equal to 0.");
         if (max < min) {
             throw new IllegalArgumentException("Max must be greater than or equal to min.");
         }
