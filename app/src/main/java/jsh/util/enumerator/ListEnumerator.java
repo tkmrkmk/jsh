@@ -5,7 +5,7 @@ import java.util.List;
 public class ListEnumerator<E> implements Enumerator<E> {
     final List<E> list;
     final int lastIndex;
-    int cursor;
+    private int cursor;
 
     public ListEnumerator(final List<E> list) {
         this.list = List.copyOf(list);
