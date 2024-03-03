@@ -7,10 +7,22 @@ import jsh.utils.exceptions.NonPositiveNumberException;
 public class IntValidator {
     private IntValidator() {}
 
+    /**
+     * Checks {@code n} is a positive number (i.e. {@code n} &gt;= 0).
+     *
+     * @param n the integer to validate
+     * @return {@code true} when n is a positive number, {@code false} otherwise
+     */
     public static boolean isPositive(final int n) {
         return n >= 0;
     }
 
+    /**
+     * Checks {@code n} is a natural number (i.e. {@code n} &gt; 0).
+     *
+     * @param n the integer to validate
+     * @return {@code true} when n is a natural number, {@code false} otherwise
+     */
     public static boolean isNatural(final int n) {
         return n > 0;
     }
