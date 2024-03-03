@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import jsh.constants.FruitNames;
-import jsh.utils.randoms.PositiveNumberRandom;
+import jsh.util.random.PositiveNumberRandom;
 import lombok.NonNull;
 
 public class RandomItemFactory {

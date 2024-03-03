@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import jsh.constants.FruitAdjectives;
 import jsh.constants.FruitNames;
-import jsh.utils.randoms.PositiveNumberRandom;
-import jsh.utils.validations.validators.IntValidator;
+import jsh.util.random.PositiveNumberRandom;
+import jsh.util.validations.validators.IntValidator;
 import lombok.NonNull;
 
 public class RandomFruitFactory {
