@@ -32,6 +32,7 @@ public class ArrayEnumerator<E> implements Enumerator<E> {
         return this.cursor == lastIndex;
     }
 
+    @Override
     public Stream<EnumerationEntry<E>> stream() {
         final Stream.Builder<EnumerationEntry<E>> builder = Stream.builder();
         for (int c = 0; c < array.length; ++c) {
