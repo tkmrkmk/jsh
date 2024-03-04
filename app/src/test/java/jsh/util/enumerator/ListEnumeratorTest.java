@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import jsh.util.debugging.DebuggingUtil;
 
 public class ListEnumeratorTest {
-    private final Function<EnumerationEntry<?>, String> enumerationEntryStringier = e -> {
+    private final Function<Enumeration<?>, String> enumerationEntryStringier = e -> {
         final StringBuilder sb = new StringBuilder();
         sb.append(e.index).append(": ").append(e.element);
         return sb.toString();

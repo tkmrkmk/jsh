@@ -20,16 +20,16 @@ public class ListEnumerator<E> implements Enumerator<E> {
     }
 
     @Override
-    public EnumerationEntry<E> next() {
+    public Enumeration<E> next() {
         ++this.cursor;
-        return new EnumerationEntry<>(cursor, this.list.get(cursor));
+        return new Enumeration<>(cursor, this.list.get(cursor));
     }
 
     @Override
-    public Stream<EnumerationEntry<E>> stream() {
-        final Stream.Builder<EnumerationEntry<E>> builder = Stream.builder();
+    public Stream<Enumeration<E>> stream() {
+        final Stream.Builder<Enumeration<E>> builder = Stream.builder();
         for (int c = 0; c < list.size(); ++c) {
-            builder.accept(new EnumerationEntry<>(c, list.get(c)));
+            builder.accept(new Enumeration<>(c, list.get(c)));
         }
         return builder.build();
     }

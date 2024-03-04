@@ -19,16 +19,16 @@ public class ArrayEnumerator<E> implements Enumerator<E> {
     }
 
     @Override
-    public EnumerationEntry<E> next() {
+    public Enumeration<E> next() {
         ++this.cursor;
-        return new EnumerationEntry<>(cursor, this.array[cursor]);
+        return new Enumeration<>(cursor, this.array[cursor]);
     }
 
     @Override
-    public Stream<EnumerationEntry<E>> stream() {
-        final Stream.Builder<EnumerationEntry<E>> builder = Stream.builder();
+    public Stream<Enumeration<E>> stream() {
+        final Stream.Builder<Enumeration<E>> builder = Stream.builder();
         for (int c = 0; c < array.length; ++c) {
-            builder.accept(new EnumerationEntry<>(c, array[c]));
+            builder.accept(new Enumeration<>(c, array[c]));
         }
         return builder.build();
     }
