@@ -24,14 +24,6 @@ public class ArrayEnumerator<E> implements Enumerator<E> {
         return new EnumerationEntry<>(cursor, this.array[cursor]);
     }
 
-    public boolean isFirst() {
-        return this.cursor == 0;
-    }
-
-    public boolean isLast() {
-        return this.cursor == lastIndex;
-    }
-
     @Override
     public Stream<EnumerationEntry<E>> stream() {
         final Stream.Builder<EnumerationEntry<E>> builder = Stream.builder();
@@ -39,5 +31,13 @@ public class ArrayEnumerator<E> implements Enumerator<E> {
             builder.accept(new EnumerationEntry<>(c, array[c]));
         }
         return builder.build();
+    }
+
+    public boolean isFirst() {
+        return this.cursor == 0;
+    }
+
+    public boolean isLast() {
+        return this.cursor == lastIndex;
     }
 }
