@@ -1,5 +1,7 @@
 package jsh.util.enumerator;
 
+import java.util.stream.Stream;
+
 public class ArrayEnumerator<E> implements Enumerator<E> {
     final E[] array;
     final int lastIndex;
@@ -28,5 +30,13 @@ public class ArrayEnumerator<E> implements Enumerator<E> {
 
     public boolean isLast() {
         return this.cursor == lastIndex;
+    }
+
+    public Stream<EnumerationEntry<E>> stream() {
+        final Stream.Builder<EnumerationEntry<E>> builder = Stream.builder();
+        for (int c = 0; c < array.length; ++c) {
+            builder.accept(new EnumerationEntry<>(c, array[c]));
+        }
+        return builder.build();
     }
 }
