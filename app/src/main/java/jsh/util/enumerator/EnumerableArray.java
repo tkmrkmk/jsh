@@ -16,10 +16,11 @@ public class EnumerableArray<E> implements Enumerable<E> {
 
     private class ArrayEnumerator implements Enumerator<E> {
         int cursor;
+        private final int lastIndex;
 
         ArrayEnumerator() {
-            this.lastIndex = array.length - 1;
             this.cursor = -1;
+            this.lastIndex = EnumerableArray.this.array.length - 1;
         }
 
         @Override
