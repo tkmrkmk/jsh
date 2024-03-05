@@ -2,6 +2,12 @@ package jsh.util.enumerator;
 
 import java.util.stream.Stream;
 
+/**
+ * Array enumerator.
+ *
+ * @deprecated Use {@link jsh.util.enumerator.EnumerableArray}.
+ */
+@Deprecated
 public class ArrayEnumerator<E> implements Enumerator<E> {
     final E[] array;
     final int lastIndex;

@@ -10,18 +10,21 @@ public class ArrayEnumeratorTest {
         DebuggingUtil.printObject(ee -> ee.index + ": " + ee.element, elem);
     };
 
+    @Deprecated
     @Test
     void stream_test() {
         final String[] sourceArray = new String[] {"zero", "one", "two", "three", "four"};
         new ArrayEnumerator<>(sourceArray).stream().forEach(printFunc);
     }
 
+    @Deprecated
     @Test
     void stream_against_empty_array() {
         final String[] emptyArray = new String[] {};
         new ArrayEnumerator<>(emptyArray).stream().forEach(printFunc);
     }
 
+    @Deprecated
     @Test
     void multiple_times_stream_foreach() {
         final String[] sourceArray = new String[] {"zero", "one", "two", "three", "four"};
