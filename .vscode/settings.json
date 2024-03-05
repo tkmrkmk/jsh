@@ -2,7 +2,7 @@
     "cSpell.words": ["xabcdef"],
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
-    "editor.formatOnSaveMode": "file",
+    "editor.formatOnSaveMode": "modificationsIfAvailable",
     "editor.formatOnType": true,
     "files.watcherExclude": {
         "**/target": true
@@ -33,7 +33,7 @@
     "java.codeAction.sortMembers.avoidVolatileChanges": false,
     "java.codeGeneration.hashCodeEquals.useInstanceof": true,
     "java.codeGeneration.hashCodeEquals.useJava7Objects": true,
-    "java.codeGeneration.toString.codeStyle": "STRING_CONCATENATION",
+    "java.codeGeneration.toString.codeStyle": "STRING_BUILDER_CHAINED",
     "java.compile.nullAnalysis.mode": "automatic",
     "java.completion.enabled": true,
     "java.completion.matchCase": "firstLetter",
