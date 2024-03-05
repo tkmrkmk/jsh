@@ -14,8 +14,7 @@ public class EnumerableArray<E> implements Enumerable<E> {
         return new ArrayEnumerator();
     }
 
-    class ArrayEnumerator implements Enumerator<E> {
-        final int lastIndex;
+    private class ArrayEnumerator implements Enumerator<E> {
         int cursor;
 
         ArrayEnumerator() {
