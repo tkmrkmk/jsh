@@ -1,6 +1,5 @@
 package jsh.util.enumerator;
 
-import java.util.ArrayList;
 import java.util.Iterator;
 
 public class EnumerableArray<E> implements Enumerable<E> {
@@ -12,10 +11,27 @@ public class EnumerableArray<E> implements Enumerable<E> {
 
     @Override
     public Iterator<Enumeration<E>> iterator() {
-        final ArrayList<Enumeration<E>> list = new ArrayList<>(array.length);
-        for (int i = 0; i < array.length; ++i) {
-            list.add(new Enumeration<>(i, array[i]));
+        return new ArrayEnumerator();
+    }
+
+    class ArrayEnumerator implements Enumerator<E> {
+        final int lastIndex;
+        int cursor;
+
+        ArrayEnumerator() {
+            this.lastIndex = array.length - 1;
+            this.cursor = -1;
         }
-        return list.iterator();
+
+        @Override
+        public boolean hasNext() {
+            return this.cursor < lastIndex;
+        }
+
+        @Override
+        public Enumeration<E> next() {
+            ++this.cursor;
+            return new Enumeration<>(this.cursor, array[cursor]);
+        }
     }
 }
