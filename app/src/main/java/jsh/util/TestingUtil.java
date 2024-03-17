@@ -1,16 +1,20 @@
 package jsh.util;
 
+import jakarta.annotation.Nonnull;
+
 public class TestingUtil {
     private TestingUtil() {}
 
-    public static final TestTimeResult time(final Runnable r) {
+    @Nonnull
+    public static final TestTimeResult time(@Nonnull final Runnable r) {
         final long startNs = System.nanoTime();
         r.run();
         final long endNs = System.nanoTime();
         return new TestTimeResult(startNs, endNs);
     }
 
-    public static final TestTimeResult timeMultiple(final Runnable r, final int number) {
+    @Nonnull
+    public static final TestTimeResult timeMultiple(@Nonnull final Runnable r, final int number) {
         final long startNs = System.nanoTime();
         for (int i = 0; i < number; ++i) {
             r.run();
@@ -22,7 +26,7 @@ public class TestingUtil {
     /**
      * An object to wrap timing result.
      */
-    public static class TestTimeResult {
+    public static final class TestTimeResult {
         public final long startNs;
         public final long endNs;
         public final long elapsedNs;
@@ -38,10 +42,10 @@ public class TestingUtil {
 
         @Override
         public String toString() {
-            return new StringBuilder() //
-                    .append("Start time  : ").append(String.format("%,d", startNs)) //
-                    .append("\nEnd time    : ").append(String.format("%,d", endNs)) //
-                    .append("\nElapsed time: ").append(String.format("%,d", elapsedNs)) //
+            return new StringBuilder()
+                    .append("Start time  : ").append(String.format("%,d", startNs))
+                    .append("\nEnd time    : ").append(String.format("%,d", endNs))
+                    .append("\nElapsed time: ").append(String.format("%,d", elapsedNs))
                     .toString();
         }
     }

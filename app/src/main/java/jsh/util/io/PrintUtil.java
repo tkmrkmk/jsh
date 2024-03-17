@@ -15,7 +15,8 @@ public class PrintUtil {
         printStream.println(object);
     }
 
-    public static final void println(@Nonnull final String separator, final Object... objects) {
+    public static final void println(
+            @Nonnull final String separator, @Nonnull final Object... objects) {
         final StringBuilder sb = new StringBuilder();
         for (final var itr = new ArrayIterator<Object>(objects); itr.hasNext();) {
             sb.append(itr.next());
