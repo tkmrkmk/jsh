@@ -14,9 +14,10 @@ public class TestingUtil {
     }
 
     @Nonnull
-    public static final TestTimeResult timeMultiple(@Nonnull final Runnable r, final int number) {
+    public static final TestTimeResult timeMultipleTimesTotal(
+            @Nonnull final Runnable r, final int times) {
         final long startNs = System.nanoTime();
-        for (int i = 0; i < number; ++i) {
+        for (int i = 0; i < times; ++i) {
             r.run();
         }
         final long endNs = System.nanoTime();
