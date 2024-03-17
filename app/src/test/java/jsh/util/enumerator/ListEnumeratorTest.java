@@ -44,8 +44,6 @@ public class ListEnumeratorTest {
             DebuggingUtil.printObject(enumerationEntryStringier, entry);
         }
 
-        System.out.println("listIterator1 " + listIterator1.list);
-        System.out.println("listIterator2 " + listIterator2.list);
         assertNotEquals(listIterator1, listIterator2);
     }
 
