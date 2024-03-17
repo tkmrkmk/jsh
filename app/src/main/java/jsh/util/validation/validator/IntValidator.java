@@ -41,8 +41,9 @@ public class IntValidator {
         if (isPositive(n)) {
             return n;
         }
-        throw Objects.isNull(message) ? new NonPositiveNumberException()
-                : new NonNaturalNumberException(message);
+        throw Objects.isNull(message)
+                ? new NonPositiveNumberException()
+                : new NonPositiveNumberException(message);
     }
 
     /**
@@ -72,7 +73,8 @@ public class IntValidator {
         if (isNatural(n)) {
             return n;
         }
-        throw Objects.isNull(message) ? new NonNaturalNumberException()
+        throw Objects.isNull(message)
+                ? new NonNaturalNumberException()
                 : new NonNaturalNumberException(message);
     }
 
