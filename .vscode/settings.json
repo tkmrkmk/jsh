@@ -17,7 +17,7 @@
         "**/bin": true,
         "**/build": true
     },
-    "java.autobuild.enabled": true,
+    // "java.autobuild.enabled": true,
     "java.cleanup.actions": [
         "addDeprecated",
         "addFinalModifier",
@@ -30,20 +30,22 @@
         "switchExpression",
         "tryWithResource"
     ],
-    "java.codeAction.sortMembers.avoidVolatileChanges": false,
     "java.codeGeneration.hashCodeEquals.useInstanceof": true,
     "java.codeGeneration.hashCodeEquals.useJava7Objects": true,
     "java.codeGeneration.toString.codeStyle": "STRING_BUILDER_CHAINED",
     "java.compile.nullAnalysis.mode": "automatic",
     "java.completion.enabled": true,
-    "java.completion.matchCase": "firstLetter",
+    "java.completion.matchCase": "off",
     "java.configuration.runtimes": [],
     "java.configuration.updateBuildConfiguration": "interactive",
     "java.dependency.packagePresentation": "hierarchical",
     "java.format.enabled": true,
     "java.format.onType.enabled": true,
-    "java.format.settings.profile": "GoogleStyle",
-    "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
+    "java.format.settings.url": ".vscode/formattingStyle.xml",
+    "java.format.settings.profile": "MyStyle",
     "java.inlayHints.parameterNames.enabled": "none",
-    "java.saveActions.organizeImports": true
+    "java.saveActions.organizeImports": true,
+    "java.server.launchMode": "Standard",
+    "java.jdt.ls.java.home": "/home/takemori/.sdkman/candidates/java/current",
+    "xml.validation.resolveExternalEntities": true
 }
