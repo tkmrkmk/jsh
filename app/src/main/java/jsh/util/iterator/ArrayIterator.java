@@ -1,13 +1,17 @@
 package jsh.util.iterator;
 
 import java.util.Iterator;
+import jakarta.annotation.Nonnull;
 
+/**
+ * An implementation of an iterator to iterate through an array.
+ */
 public class ArrayIterator<E> implements Iterator<E> {
     private final E[] array;
     private final int lastIndex;
     private int cursor;
 
-    public ArrayIterator(final E[] array) {
+    public ArrayIterator(@Nonnull final E[] array) {
         this.array = array;
         this.lastIndex = array.length - 1;
         this.cursor = -1;
