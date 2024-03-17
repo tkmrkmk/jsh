@@ -18,21 +18,25 @@ public final class DateUtil {
      */
     public static final int DAY_MILLISECONDS = 86400000; // 24 * 60 * 60 * 1000
 
-    public static final Date createDate(final int year, final int month, final int day) {
+    public static final Date createDate(
+            final int year, final int month, final int day) {
         return createDate(year, month, day, 0, 0, 0, 0);
     }
 
-    public static final Date createDate(final int year, final int month, final int day,
+    public static final Date createDate(
+            final int year, final int month, final int day,
             final int hour, final int minute) {
         return createDate(year, month, day, hour, minute, 0, 0);
     }
 
-    public static final Date createDate(final int year, final int month, final int day,
+    public static final Date createDate(
+            final int year, final int month, final int day,
             final int hour, final int minute, final int second) {
         return createDate(year, month, day, hour, minute, second, 0);
     }
 
-    public static final Date createDate(final int year, final int month, final int day,
+    public static final Date createDate(
+            final int year, final int month, final int day,
             final int hour, final int minute, final int second, final int millisecond) {
         final Calendar cal = Calendar.getInstance();
         cal.clear();
@@ -66,7 +70,9 @@ public final class DateUtil {
      * @return A {@code LocalDateTime} instance without sub-date information.
      */
     public static final LocalDateTime truncateTime(final LocalDateTime date) {
-        return LocalDateTime.of(date.getYear(), date.getMonth(), date.getDayOfMonth(), 0, 0);
+        return LocalDateTime.of(
+                date.getYear(), date.getMonth(), date.getDayOfMonth(),
+                0, 0);
     }
 
     /**
@@ -89,8 +95,8 @@ public final class DateUtil {
      */
     public static final LocalDate toLocalDate(final Date date) {
         final Calendar cal = toCalendar(date);
-        return LocalDate.of(cal.get(Calendar.YEAR), cal.get(Calendar.MONDAY),
-                cal.get(Calendar.DAY_OF_MONTH));
+        return LocalDate.of(
+                cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH));
     }
 
     /**
@@ -101,7 +107,8 @@ public final class DateUtil {
      */
     public static final LocalTime toLocalTime(final Date date) {
         final Calendar cal = toCalendar(date);
-        return LocalTime.of(cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE),
+        return LocalTime.of(
+                cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE),
                 cal.get(Calendar.SECOND), cal.get(Calendar.MILLISECOND) * 1000);
     }
 
@@ -113,9 +120,9 @@ public final class DateUtil {
      */
     public static final LocalDateTime toLocalDateTime(final Date date) {
         final Calendar cal = toCalendar(date);
-        return LocalDateTime.of(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH),
-                cal.get(Calendar.DAY_OF_MONTH), cal.get(Calendar.HOUR_OF_DAY),
-                cal.get(Calendar.MINUTE), cal.get(Calendar.SECOND),
-                cal.get(Calendar.MILLISECOND) * 1000);
+        return LocalDateTime.of(
+                cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH),
+                cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE),
+                cal.get(Calendar.SECOND), cal.get(Calendar.MILLISECOND) * 1000);
     }
 }
