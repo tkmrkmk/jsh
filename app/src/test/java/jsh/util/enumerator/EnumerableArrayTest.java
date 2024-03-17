@@ -26,11 +26,11 @@ public class EnumerableArrayTest {
     void time() {
         final int times = 10000;
         final EnumerableArrayTest self = new EnumerableArrayTest();
-        final var forEachResult = TestingUtil.timeMultiple(() -> self.foreach(), times);
+        final var forEachResult = TestingUtil.timeMultipleTimesTotal(() -> self.foreach(), times);
         System.out.println(forEachResult);
         System.out.println();
 
-        final var forIResult = TestingUtil.timeMultiple(() -> self.forI(), times);
+        final var forIResult = TestingUtil.timeMultipleTimesTotal(() -> self.forI(), times);
         System.out.println(forIResult);
     }
 
