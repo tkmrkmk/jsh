@@ -3,8 +3,8 @@ package jsh.util.enumerator;
 import java.util.List;
 
 public class ListEnumerator<E> implements Enumerator<E> {
-    final List<E> list;
-    final int lastIndex;
+    private final List<E> list;
+    private final int lastIndex;
     private int cursor;
 
     public ListEnumerator(final List<E> list) {
