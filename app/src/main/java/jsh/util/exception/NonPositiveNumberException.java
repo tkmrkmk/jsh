@@ -1,7 +1,7 @@
 package jsh.util.exception;
 
 /**
- * Thrown to indicate that a method has been passed is non-positive number as an argument while
+ * Thrown to indicate that a method has been passed a non-positive number as an argument while
  * expecting positive number.
  */
 public class NonPositiveNumberException extends IllegalArgumentException {
