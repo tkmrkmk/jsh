@@ -1,6 +1,5 @@
 package jsh.util.validation.validator;
 
-import java.util.Objects;
 import jsh.util.exception.NonNaturalNumberException;
 import jsh.util.exception.NonPositiveNumberException;
 
@@ -29,8 +28,9 @@ public class ShortValidator {
         if (isPositive(n)) {
             return n;
         }
-        throw Objects.isNull(message) ? new NonPositiveNumberException()
-                : new NonNaturalNumberException(message);
+        throw message == null
+                ? new NonPositiveNumberException()
+                : new NonPositiveNumberException(message);
     }
 
     /**
@@ -60,7 +60,8 @@ public class ShortValidator {
         if (isNatural(n)) {
             return n;
         }
-        throw Objects.isNull(message) ? new NonNaturalNumberException()
+        throw message == null
+                ? new NonNaturalNumberException()
                 : new NonNaturalNumberException(message);
     }
 

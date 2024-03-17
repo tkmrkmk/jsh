@@ -1,6 +1,6 @@
 package jsh.util.validation.validator;
 
-import java.util.Objects;
+import jakarta.annotation.Nullable;
 import jsh.util.exception.NonNaturalNumberException;
 import jsh.util.exception.NonPositiveNumberException;
 
@@ -37,12 +37,13 @@ public class ByteValidator {
      * @see jsh.util.validation.ValidationUtil#requirePositiveNumber(long, String)
      * @see jsh.util.validation.validator.ByteValidator#requireNaturalNumber(byte, String)
      */
-    public static byte requirePositiveNumber(final byte n, final String message) {
+    public static byte requirePositiveNumber(final byte n, @Nullable final String message) {
         if (isPositive(n)) {
             return n;
         }
-        throw Objects.isNull(message) ? new NonPositiveNumberException()
-                : new NonNaturalNumberException(message);
+        throw message == null
+                ? new NonPositiveNumberException()
+                : new NonPositiveNumberException(message);
     }
 
     /**
@@ -68,11 +69,12 @@ public class ByteValidator {
      * @see jsh.util.validation.ValidationUtil#requireNaturalNumber(long, String)
      * @see jsh.util.validation.validator.ByteValidator#requirePositiveNumber(byte, String)
      */
-    public static byte requireNaturalNumber(final byte n, final String message) {
+    public static byte requireNaturalNumber(final byte n, @Nullable final String message) {
         if (isNatural(n)) {
             return n;
         }
-        throw Objects.isNull(message) ? new NonNaturalNumberException()
+        throw message == null
+                ? new NonNaturalNumberException()
                 : new NonNaturalNumberException(message);
     }
 

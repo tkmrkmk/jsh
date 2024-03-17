@@ -1,6 +1,5 @@
 package jsh.util.validation.validator;
 
-import java.util.Objects;
 import jsh.util.exception.NonNaturalNumberException;
 import jsh.util.exception.NonPositiveNumberException;
 
@@ -41,8 +40,9 @@ public class LongValidator {
         if (isPositive(n)) {
             return n;
         }
-        throw Objects.isNull(message) ? new NonPositiveNumberException()
-                : new NonNaturalNumberException(message);
+        throw message == null
+                ? new NonPositiveNumberException()
+                : new NonPositiveNumberException(message);
     }
 
     /**
@@ -72,7 +72,8 @@ public class LongValidator {
         if (isNatural(n)) {
             return n;
         }
-        throw Objects.isNull(message) ? new NonNaturalNumberException()
+        throw message == null
+                ? new NonNaturalNumberException()
                 : new NonNaturalNumberException(message);
     }
 
@@ -88,5 +89,4 @@ public class LongValidator {
     public static long requireNaturalNumber(final long n) {
         return requireNaturalNumber(n, null);
     }
-
 }

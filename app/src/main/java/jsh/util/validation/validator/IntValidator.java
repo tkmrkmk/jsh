@@ -1,6 +1,6 @@
 package jsh.util.validation.validator;
 
-import java.util.Objects;
+import jakarta.annotation.Nullable;
 import jsh.util.exception.NonNaturalNumberException;
 import jsh.util.exception.NonPositiveNumberException;
 
@@ -37,11 +37,11 @@ public class IntValidator {
      * @see jsh.util.validation.ValidationUtil#requirePositiveNumber(long, String)
      * @see jsh.util.validation.validator.IntValidator#requireNaturalNumber(int, String)
      */
-    public static int requirePositiveNumber(final int n, final String message) {
+    public static int requirePositiveNumber(final int n, @Nullable final String message) {
         if (isPositive(n)) {
             return n;
         }
-        throw Objects.isNull(message)
+        throw message == null
                 ? new NonPositiveNumberException()
                 : new NonPositiveNumberException(message);
     }
@@ -69,11 +69,11 @@ public class IntValidator {
      * @see jsh.util.validation.ValidationUtil#requireNaturalNumber(long, String)
      * @see jsh.util.validation.validator.IntValidator#requirePositiveNumber(int, String)
      */
-    public static int requireNaturalNumber(final int n, final String message) {
+    public static int requireNaturalNumber(final int n, @Nullable final String message) {
         if (isNatural(n)) {
             return n;
         }
-        throw Objects.isNull(message)
+        throw message == null
                 ? new NonNaturalNumberException()
                 : new NonNaturalNumberException(message);
     }
@@ -89,5 +89,18 @@ public class IntValidator {
      */
     public static int requireNaturalNumber(final int n) {
         return requireNaturalNumber(n, null);
+    }
+
+    /**
+     * Converts nullable Integer to int.
+     *
+     * @param i an integer
+     * @return {@code i.intValue()} if {@code i} is not null, otherwise {@code 0}.
+     */
+    public static int toValueInt(@Nullable final Integer i) {
+        if (i == null) {
+            return 0;
+        }
+        return i.intValue();
     }
 }
