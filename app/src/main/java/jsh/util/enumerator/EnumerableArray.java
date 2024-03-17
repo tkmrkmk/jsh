@@ -1,12 +1,13 @@
 package jsh.util.enumerator;
 
 import java.util.Iterator;
+import jakarta.annotation.Nonnull;
 
 public class EnumerableArray<E> implements Enumerable<E> {
     private final E[] array;
 
-    public EnumerableArray(final E[] array) {
-        this.array = array.clone();
+    public EnumerableArray(@Nonnull final E[] array) {
+        this.array = array;
     }
 
     @Override
@@ -14,11 +15,11 @@ public class EnumerableArray<E> implements Enumerable<E> {
         return new ArrayEnumerator();
     }
 
-    private class ArrayEnumerator implements Enumerator<E> {
-        int cursor;
+    private final class ArrayEnumerator implements Enumerator<E> {
         private final int lastIndex;
+        private int cursor;
 
-        ArrayEnumerator() {
+        private ArrayEnumerator() {
             this.cursor = -1;
             this.lastIndex = EnumerableArray.this.array.length - 1;
         }
