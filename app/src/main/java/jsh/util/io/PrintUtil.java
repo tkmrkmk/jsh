@@ -1,26 +1,25 @@
 package jsh.util.io;
 
 import java.io.PrintStream;
+import jakarta.annotation.Nonnull;
 import jsh.util.iterator.ArrayIterator;
-import lombok.NonNull;
 
 public class PrintUtil {
-    @NonNull
     public static PrintStream printStream = System.out;
 
-    public static void println() {
+    public static final void println() {
         printStream.println();
     }
 
-    public static void println(final Object object) {
+    public static final void println(final Object object) {
         printStream.println(object);
     }
 
-    public static void println(final String separator, final Object... objects) {
+    public static final void println(@Nonnull final String separator, final Object... objects) {
         final StringBuilder sb = new StringBuilder();
-        for (final ArrayIterator<Object> it = new ArrayIterator<>(objects); it.hasNext();) {
-            sb.append(it.next());
-            if (!it.isLast()) {
+        for (final var itr = new ArrayIterator<Object>(objects); itr.hasNext();) {
+            sb.append(itr.next());
+            if (!itr.isLast()) {
                 sb.append(separator);
             }
         }
