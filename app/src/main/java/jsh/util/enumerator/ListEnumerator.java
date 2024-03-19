@@ -17,12 +17,13 @@ public class ListEnumerator<E> implements Enumerator<E> {
 
     @Override
     public boolean hasNext() {
-        return this.cursor < lastIndex;
+        return this.cursor < this.lastIndex;
     }
 
     @Override
+    @Nonnull
     public Enumeration<E> next() {
         ++this.cursor;
-        return new Enumeration<>(cursor, this.list.get(cursor));
+        return new Enumeration<>(this.cursor, this.list.get(cursor));
     }
 }
