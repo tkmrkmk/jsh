@@ -10,7 +10,7 @@ public class DebuggingUtil {
      * "return;" and return to the caller so that you can inspect the situation in the debugger at
      * the moment.
      */
-    public static void nop() {
+    public static final void nop() {
         return;
     }
 
@@ -23,11 +23,13 @@ public class DebuggingUtil {
      * @param target the targeted object to be converted into string
      * @return the converted string of {@code target}
      */
-    public static <T> String stringifyObject(final Function<T, String> converter, final T target) {
+    public static final <T> String stringifyObject(
+            final Function<? super T, String> converter, final T target) {
         return converter.apply(target);
     }
 
-    public static <T> void printObject(final Function<T, String> converter, final T target) {
+    public static final <T> void printObject(
+            final Function<? super T, String> converter, final T target) {
         System.out.println(stringifyObject(converter, target));
     }
 }
