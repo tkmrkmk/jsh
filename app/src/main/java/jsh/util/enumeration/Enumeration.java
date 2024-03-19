@@ -1,4 +1,4 @@
-package jsh.util.enumerator;
+package jsh.util.enumeration;
 
 import jakarta.annotation.Nullable;
 

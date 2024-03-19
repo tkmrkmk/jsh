@@ -1,8 +1,10 @@
-package jsh.util.enumerator;
+package jsh.util.enumeration.enumerable;
 
 import java.util.Arrays;
 import java.util.Objects;
 import jakarta.annotation.Nonnull;
+import jsh.util.enumeration.Enumeration;
+import jsh.util.enumeration.enumerator.Enumerator;
 
 public class EnumerableArray<E> implements Enumerable<E> {
     @Nonnull private final E[] array;

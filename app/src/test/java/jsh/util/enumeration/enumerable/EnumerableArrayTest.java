@@ -1,4 +1,4 @@
-package jsh.util.enumerator;
+package jsh.util.enumeration.enumerable;
 
 import org.junit.jupiter.api.Test;
 import jsh.util.TestingUtil;

@@ -1,4 +1,4 @@
-package jsh.util.enumerator;
+package jsh.util.enumeration.enumerator;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.function.Function;
 import org.junit.jupiter.api.Test;
 import jsh.util.debugging.DebuggingUtil;
+import jsh.util.enumeration.Enumeration;
 
 public class ListEnumeratorTest {
     private final Function<Enumeration<?>, String> enumerationEntryStringier = e -> {
@@ -49,8 +50,8 @@ public class ListEnumeratorTest {
 
     @Test
     void iteration_against_empty_list() {
-        final var emptyList = List.of();
-        final ListEnumerator<?> emptyListIterator = new ListEnumerator<>(emptyList);
+        @SuppressWarnings("null")
+        final ListEnumerator<?> emptyListIterator = new ListEnumerator<>(List.of());
         for (; emptyListIterator.hasNext();) {
             final var entry = emptyListIterator.next();
             DebuggingUtil.printObject(enumerationEntryStringier, entry);

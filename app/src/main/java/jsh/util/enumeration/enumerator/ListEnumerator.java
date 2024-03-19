@@ -1,8 +1,9 @@
-package jsh.util.enumerator;
+package jsh.util.enumeration.enumerator;
 
 import java.util.List;
 import java.util.Objects;
 import jakarta.annotation.Nonnull;
+import jsh.util.enumeration.Enumeration;
 
 public class ListEnumerator<E> implements Enumerator<E> {
     @Nonnull private final List<E> list;
