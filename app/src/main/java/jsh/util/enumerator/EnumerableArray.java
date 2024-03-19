@@ -1,17 +1,19 @@
 package jsh.util.enumerator;
 
-import java.util.Iterator;
+import java.util.Arrays;
+import java.util.Objects;
 import jakarta.annotation.Nonnull;
 
 public class EnumerableArray<E> implements Enumerable<E> {
-    private final E[] array;
+    @Nonnull private final E[] array;
 
     public EnumerableArray(@Nonnull final E[] array) {
-        this.array = array;
+        this.array = Objects.requireNonNull(Arrays.copyOf(array, array.length));
     }
 
     @Override
-    public Iterator<Enumeration<E>> iterator() {
+    @Nonnull
+    public Enumerator<E> iterator() {
         return new ArrayEnumerator();
     }
 
@@ -30,6 +32,7 @@ public class EnumerableArray<E> implements Enumerable<E> {
         }
 
         @Override
+        @Nonnull
         public Enumeration<E> next() {
             ++this.cursor;
             return new Enumeration<>(this.cursor, array[cursor]);
