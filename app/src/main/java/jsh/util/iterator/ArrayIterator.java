@@ -1,6 +1,7 @@
 package jsh.util.iterator;
 
 import java.util.Iterator;
+import java.util.Objects;
 import jakarta.annotation.Nonnull;
 
 /**
@@ -12,6 +13,8 @@ public class ArrayIterator<E> implements Iterator<E> {
     private int cursor;
 
     public ArrayIterator(@Nonnull final E[] array) {
+        Objects.requireNonNull(array);
+
         this.array = array;
         this.lastIndex = array.length - 1;
         this.cursor = -1;
