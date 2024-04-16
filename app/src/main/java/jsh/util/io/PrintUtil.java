@@ -5,7 +5,7 @@ import jakarta.annotation.Nonnull;
 import jsh.util.iterator.ArrayIterator;
 
 public class PrintUtil {
-    public static PrintStream printStream = System.out;
+    public static final PrintStream printStream = System.out;
 
     public static final void println() {
         printStream.println();
@@ -17,13 +17,12 @@ public class PrintUtil {
 
     public static final void println(
             @Nonnull final String separator, @Nonnull final Object... objects) {
-        final StringBuilder sb = new StringBuilder();
-        for (final var itr = new ArrayIterator<Object>(objects); itr.hasNext();) {
-            sb.append(itr.next());
+        for (final var itr = new ArrayIterator<>(objects); itr.hasNext();) {
+            printStream.append(itr.next().toString());
             if (!itr.isLast()) {
-                sb.append(separator);
+                printStream.append(separator);
             }
+            printStream.flush();
         }
-        println(sb.toString());
     }
 }
