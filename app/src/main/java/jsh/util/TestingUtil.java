@@ -1,5 +1,6 @@
 package jsh.util;
 
+import java.util.Objects;
 import jakarta.annotation.Nonnull;
 
 public class TestingUtil {
@@ -7,6 +8,7 @@ public class TestingUtil {
 
     @Nonnull
     public static final TestTimeResult time(@Nonnull final Runnable r) {
+        Objects.requireNonNull(r);
         final long startNs = System.nanoTime();
         r.run();
         final long endNs = System.nanoTime();
