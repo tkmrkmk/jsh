@@ -7,6 +7,7 @@
         "vscjava.vscode-gradle",
         "aaron-bond.better-comments",
         "redhat.fabric8-analytics",
-        "vscjava.vscode-java-test"
+        "vscjava.vscode-java-test",
+        "swellaby.workspace-config-plus"
     ]
 }
