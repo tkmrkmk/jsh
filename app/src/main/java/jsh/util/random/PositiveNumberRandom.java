@@ -3,6 +3,7 @@ package jsh.util.random;
 import java.util.Objects;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
+import jakarta.annotation.Nonnull;
 import jsh.util.exception.NonPositiveNumberException;
 import jsh.util.validation.validator.IntValidator;
 
@@ -15,7 +16,7 @@ public final class PositiveNumberRandom {
     public final Random random;
     private final int variation;
 
-    private PositiveNumberRandom(final int min, final int max, final Random random) {
+    private PositiveNumberRandom(final int min, final int max, @Nonnull final Random random) {
         this.min =
                 IntValidator.requirePositiveNumber(min, "Min must be greater than or equal to 0.");
         this.max =
