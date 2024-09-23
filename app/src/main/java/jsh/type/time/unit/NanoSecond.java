@@ -16,10 +16,6 @@ public class NanoSecond implements Comparable<NanoSecond> {
         return this.value;
     }
 
-    public MilliSecond toMilliSecond() {
-        return new MilliSecond(this.value * 1_000_000);
-    }
-
     public boolean lt(final NanoSecond o) {
         return this.value < o.value;
     }
@@ -40,7 +36,7 @@ public class NanoSecond implements Comparable<NanoSecond> {
         final long t = this.value;
         final long a = ns.value;
 
-        // validation
+        //
         final BigInteger bi = new BigInteger(String.valueOf(t));
         bi.subtract(new BigInteger(String.valueOf(a)));
         if (bi.compareTo(new BigInteger(String.valueOf(Long.MIN_VALUE))) <= -1) {
