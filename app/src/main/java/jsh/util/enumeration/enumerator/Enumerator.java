@@ -3,4 +3,5 @@ package jsh.util.enumeration.enumerator;
 import java.util.Iterator;
 import jsh.util.enumeration.Enumeration;
 
-public interface Enumerator<E> extends Iterator<Enumeration<E>> {}
+public sealed interface Enumerator<E> extends Iterator<Enumeration<E>>
+        permits ListEnumerator, CollectionEnumerator, ArrayEnumerator {}

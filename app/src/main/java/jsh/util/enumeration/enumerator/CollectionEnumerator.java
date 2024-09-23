@@ -6,7 +6,7 @@ import java.util.Objects;
 import jakarta.annotation.Nonnull;
 import jsh.util.enumeration.Enumeration;
 
-public class CollectionEnumerator<E> implements Enumerator<E> {
+public final class CollectionEnumerator<E> implements Enumerator<E> {
     @Nonnull private final List<E> list;
     private final int lastIndex;
     private int cursor;
