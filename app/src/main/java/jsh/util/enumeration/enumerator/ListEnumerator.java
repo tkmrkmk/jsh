@@ -23,8 +23,12 @@ public final class ListEnumerator<E> implements Enumerator<E> {
 
     @Override
     @Nonnull
-    public Enumeration<E> next() {
+    public Enumeration<E> next() throws IndexOutOfBoundsException {
         ++this.cursor;
+        return this.get();
+    }
+
+    public Enumeration<E> get() throws IndexOutOfBoundsException {
         return new Enumeration<>(this.cursor, this.list.get(cursor));
     }
 }

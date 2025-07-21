@@ -21,8 +21,13 @@ public final class ArrayEnumerator<E> implements Enumerator<E> {
 
     @Override
     @Nonnull
-    public Enumeration<E> next() {
+    public Enumeration<E> next() throws IndexOutOfBoundsException {
         ++this.cursor;
+        return this.get();
+    }
+
+    @Override
+    public Enumeration<E> get() throws IndexOutOfBoundsException {
         return new Enumeration<>(this.cursor, array[cursor]);
     }
 }
