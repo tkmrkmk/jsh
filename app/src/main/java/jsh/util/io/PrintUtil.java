@@ -17,8 +17,8 @@ public class PrintUtil {
 
     public static final void println(
             @Nonnull final String separator, @Nonnull final Object... objects) {
-        for (final var itr = new ArrayIterator<>(objects); itr.hasNext();) {
-            printStream.append(itr.next().toString());
+        for (final var itr = new ArrayIterator<>(objects); itr.hasNext(); itr.next()) {
+            printStream.append(itr.get().toString());
             if (!itr.isLast()) {
                 printStream.append(separator);
             }

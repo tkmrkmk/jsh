@@ -28,6 +28,13 @@ public class ArrayIterator<E> implements Iterator<E> {
     @Override
     public E next() {
         ++cursor;
+        return this.get();
+    }
+
+    public E get() {
+        if (cursor < 0 || cursor > lastIndex) {
+            throw new IndexOutOfBoundsException("Cursor is out of bounds: " + cursor);
+        }
         return array[cursor];
     }
 
