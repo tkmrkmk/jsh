@@ -12,13 +12,9 @@ plugins {
     id 'java'
 }
 
-sourceCompatibility = 17
-targetCompatibility = 17
-
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
-    }
+// Compile with whatever JDK runs Gradle, but emit Java 17 bytecode/API.
+tasks.withType(JavaCompile).configureEach {
+    options.release = 17
 }
 
 repositories {
@@ -37,13 +33,14 @@ sourceSets {
 dependencies {
     // Use JUnit Jupiter for testing.
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.1'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
     // Use lombok -- who won't?
-	compileOnly 'org.projectlombok:lombok:1.18.30'
-	annotationProcessor 'org.projectlombok:lombok:1.18.30'
+	compileOnly 'org.projectlombok:lombok:1.18.48'
+	annotationProcessor 'org.projectlombok:lombok:1.18.48'
 
-	testCompileOnly 'org.projectlombok:lombok:1.18.30'
-	testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
+	testCompileOnly 'org.projectlombok:lombok:1.18.48'
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.48'
 
     // javax
     implementation "jakarta.annotation:jakarta.annotation-api:2.1.1"
