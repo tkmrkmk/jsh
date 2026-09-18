@@ -28,3 +28,18 @@ build
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+**/Example.java
+
+.vscode/*
+!.vscode/settings.shared.json
+!.vscode/tasks.shared.json
+!.vscode/launch.shared.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix

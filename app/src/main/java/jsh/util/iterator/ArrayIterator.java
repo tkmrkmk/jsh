@@ -1,0 +1,48 @@
+package jsh.util.iterator;
+
+import java.util.Iterator;
+import java.util.Objects;
+import jakarta.annotation.Nonnull;
+
+/**
+ * An implementation of an iterator to iterate through an array.
+ */
+public class ArrayIterator<E> implements Iterator<E> {
+    private final E[] array;
+    private final int lastIndex;
+    private int cursor;
+
+    public ArrayIterator(@Nonnull final E[] array) {
+        Objects.requireNonNull(array);
+
+        this.array = array;
+        this.lastIndex = array.length - 1;
+        this.cursor = -1;
+    }
+
+    @Override
+    public boolean hasNext() {
+        return cursor < lastIndex;
+    }
+
+    @Override
+    public E next() {
+        ++cursor;
+        return this.get();
+    }
+
+    public E get() {
+        if (cursor < 0 || cursor > lastIndex) {
+            throw new IndexOutOfBoundsException("Cursor is out of bounds: " + cursor);
+        }
+        return array[cursor];
+    }
+
+    public boolean isLast() {
+        return cursor == lastIndex;
+    }
+
+    public boolean isFirst() {
+        return cursor == 0;
+    }
+}

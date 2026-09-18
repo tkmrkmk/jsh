@@ -1,0 +1,50 @@
+{
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "modificationsIfAvailable",
+    "editor.formatOnType": true,
+    "files.exclude": {
+        "**/.DS_Store": true,
+        "**/.git": true,
+        "**/.hg": true,
+        "**/.svn": true,
+        "**/bin": true,
+        "**/build": true,
+        "**/CVS": true,
+        "**/Thumbs.db": true
+    },
+    "files.watcherExclude": {
+        "**/target": true
+    },
+    "java.autobuild.enabled": true,
+    "java.cleanup.actions": [
+        "addDeprecated",
+        "addFinalModifier",
+        "addOverride",
+        "instanceofPatternMatch",
+        "invertEquals",
+        "lambdaExpression",
+        "lambdaExpressionFromAnonymousClass",
+        "stringConcatToTextBlock",
+        "switchExpression",
+        "tryWithResource"
+    ],
+    "java.codeGeneration.hashCodeEquals.useInstanceof": true,
+    "java.codeGeneration.hashCodeEquals.useJava7Objects": false,
+    "java.codeGeneration.toString.codeStyle": "STRING_BUILDER_CHAINED",
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.compile.nullAnalysis.nonnull": [
+        "jakarta.annotation.Nonnull"
+    ],
+    "java.compile.nullAnalysis.nullable": [
+        "jakarta.annotation.Nullable"
+    ],
+    "java.completion.enabled": true,
+    "java.completion.matchCase": "off",
+    "java.format.enabled": true,
+    "java.format.settings.profile": "MyStyle",
+    "java.format.settings.url": ".vscode/formattingStyle.xml",
+    "java.inlayHints.parameterNames.enabled": "none",
+    "java.saveActions.organizeImports": true,
+    "java.server.launchMode": "Standard"
+}
