@@ -14,8 +14,8 @@ public class DebuggingUtilTest {
     @Test
     void stringifyObject_named_class() {
         final class NamedClass {
-            public final int id;
-            public final String name;
+            private final int id;
+            private final String name;
 
             NamedClass(final int id, final String name) {
                 this.id = id;
@@ -42,12 +42,12 @@ public class DebuggingUtilTest {
         // @formatter:off
         final var anonymousClass = new Object() {
             private int     code;
-            public  int  getCode() { return code; }
-            public  void setCode(final int code) { this.code = code; }
+            private  int  getCode() { return code; }
+            private  void setCode(final int code) { this.code = code; }
 
             private String    message;
-            public  String getMessage() { return message; }
-            public  void   setMessage(final String message) { this.message = message; }
+            private  String getMessage() { return message; }
+            private  void   setMessage(final String message) { this.message = message; }
         };
         // @formatter:on
 

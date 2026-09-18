@@ -11,7 +11,7 @@ public class AnonymousClassVarDeclarationExample {
                 return super.add(e);
             }
 
-            public void greet() {
+            private void greet() {
                 System.out.println("Hello, this is an anonymous class of java.util.ArrayList.");
             }
         };

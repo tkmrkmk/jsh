@@ -1,8 +1,8 @@
 package jsh.util.validation.validator;
 
-import jakarta.annotation.Nullable;
 import jsh.util.exception.NonNaturalNumberException;
 import jsh.util.exception.NonPositiveNumberException;
+import org.jspecify.annotations.Nullable;
 
 public class ByteValidator {
     private ByteValidator() {}

@@ -1,7 +1,6 @@
 package jsh.util.debugging;
 
 import java.util.List;
-import java.util.function.Function;
 import jsh.struct.fruit.Fruit;
 import jsh.struct.fruit.RandomFruitFactory;
 import jsh.util.random.PositiveNumberRandom;
@@ -18,11 +17,11 @@ public class DebuggingUtilExample {
         }
 
         for (final var fruit : fruits) {
-            System.out.println(DebuggingUtil.stringifyObject(fruitStringConverter, fruit));
+            System.out.println(DebuggingUtil.stringifyObject(DebuggingUtilExample::fruitStringConverter, fruit));
         }
     }
 
-    private static final Function<Fruit, String> fruitStringConverter = f -> {
+    private static String fruitStringConverter(Fruit f) {
         final StringBuilder sb = new StringBuilder();
         sb.append("- ");
 
@@ -46,6 +45,5 @@ public class DebuggingUtilExample {
             }
             sb.append(a).append(", ");
         }
-        return;
     }
 }

@@ -7,6 +7,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
+ * A utility class to handle {@link java.util.Date} well
  * @author zhu2qian1
  */
 public final class DateUtil {
@@ -56,6 +57,7 @@ public final class DateUtil {
      * @param date The {@code Date} instance to remove sub-date information from.
      * @return A {@code Date} instance without sub-date information.
      */
+    @SuppressWarnings("JavaUtilDate")
     public static final Date truncateTime(final Date date) {
         final long l = date.getTime();
         final long m = l % DAY_MILLISECONDS;

@@ -1,7 +1,5 @@
 package jsh.type.time.unit;
 
-import java.math.BigInteger;
-
 public class NanoSecond implements Comparable<NanoSecond> {
     private final long value;
 

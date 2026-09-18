@@ -2,6 +2,7 @@ package jsh.util.validation.validator;
 
 import jsh.util.exception.NonNaturalNumberException;
 import jsh.util.exception.NonPositiveNumberException;
+import org.jspecify.annotations.Nullable;
 
 public class LongValidator {
     private LongValidator() {}
@@ -36,7 +37,7 @@ public class LongValidator {
      * @see jsh.util.validation.ValidationUtil#requirePositiveNumber(long, String)
      * @see jsh.util.validation.validator.LongValidator#requireNaturalNumber(long, String)
      */
-    public static long requirePositiveNumber(final long n, final String message) {
+    public static long requirePositiveNumber(final long n, @Nullable final String message) {
         if (isPositive(n)) {
             return n;
         }
@@ -68,7 +69,7 @@ public class LongValidator {
      * @see jsh.util.validation.ValidationUtil#requireNaturalNumber(long, String)
      * @see jsh.util.validation.validator.LongValidator#requirePositiveNumber(long, String)
      */
-    public static long requireNaturalNumber(final long n, final String message) {
+    public static long requireNaturalNumber(final long n, @Nullable final String message) {
         if (isNatural(n)) {
             return n;
         }

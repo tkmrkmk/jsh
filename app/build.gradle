@@ -6,15 +6,33 @@
  * User Manual available at https://docs.gradle.org/8.0.2/userguide/building_java_projects.html
  */
 
+import net.ltgt.gradle.errorprone.CheckSeverity
+
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
     id 'java'
+    // Error Prone, which hosts the NullAway checker.
+    id 'net.ltgt.errorprone' version '5.1.1'
 }
 
 // Compile with whatever JDK runs Gradle, but emit Java 17 bytecode/API.
 tasks.withType(JavaCompile).configureEach {
     options.release = 17
+    options.errorprone {
+        disableWarningsInGeneratedCode = true
+        // Crashes on string literals in Lombok-generated null checks (Error Prone 2.50.0).
+        disable('StringConcatToTextBlock')
+        // Treat everything under jsh (subpackages included) as null-marked, so no per-package
+        // package-info.java with @NullMarked is needed. Only NullAway knows this, not other tools.
+        check('NullAway', CheckSeverity.ERROR)
+        option('NullAway:AnnotatedPackages', 'jsh')
+    }
+}
+
+// Tests share packages with main (so they inherit @NullMarked) and deliberately pass nulls.
+tasks.named('compileTestJava') {
+    options.errorprone.disable('NullAway')
 }
 
 repositories {
@@ -42,8 +60,10 @@ dependencies {
 	testCompileOnly 'org.projectlombok:lombok:1.18.48'
 	testAnnotationProcessor 'org.projectlombok:lombok:1.18.48'
 
-    // javax
-    implementation "jakarta.annotation:jakarta.annotation-api:2.1.1"
+    // nullness annotations (JSpecify) and their compile-time checker (NullAway on Error Prone)
+    implementation 'org.jspecify:jspecify:1.0.1'
+    errorprone 'com.google.errorprone:error_prone_core:2.50.0'
+    errorprone 'com.uber.nullaway:nullaway:0.14.1'
 
     // commons lang stuff
     implementation 'org.apache.commons:commons-collections4:4.4'

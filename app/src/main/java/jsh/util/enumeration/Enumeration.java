@@ -1,6 +1,6 @@
 package jsh.util.enumeration;
 
-import jakarta.annotation.Nullable;
+import org.jspecify.annotations.Nullable;
 
 public class Enumeration<E> {
     public final int index;

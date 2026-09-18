@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.ZoneId;
 import java.util.Date;
 import org.junit.jupiter.api.Test;
 
@@ -14,6 +15,7 @@ public class DateUtilTest {
     }
 
     @Test
+    @SuppressWarnings("JavaUtilDate")
     void create_date() {
         sep("createDate");
         final var d1 = DateUtil.createDate(1999, 12, 31);
@@ -26,6 +28,7 @@ public class DateUtilTest {
     }
 
     @Test
+    @SuppressWarnings("JavaUtilDate")
     void truncate_time() {
         System.out.println("---- truncateTime ----");
         final Date today = new Date();
@@ -35,7 +38,7 @@ public class DateUtilTest {
 
         assertNotEquals(today, truncated);
 
-        final LocalDateTime todayLdt = LocalDateTime.now();
+        final LocalDateTime todayLdt = LocalDateTime.now(ZoneId.of("Asia/Tokyo"));
         final LocalDateTime truncatedLdt = DateUtil.truncateTime(todayLdt);
         assertNotEquals(todayLdt, truncatedLdt);
         assertEquals(todayLdt.toLocalDate(), truncatedLdt.toLocalDate());

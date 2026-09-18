@@ -2,6 +2,7 @@ package jsh.util.validation.validator;
 
 import jsh.util.exception.NonNaturalNumberException;
 import jsh.util.exception.NonPositiveNumberException;
+import org.jspecify.annotations.Nullable;
 
 public class ShortValidator {
     private ShortValidator() {}
@@ -24,7 +25,7 @@ public class ShortValidator {
      * @see jsh.util.validation.ValidationUtil#requirePositiveNumber(long, String)
      * @see jsh.util.validation.validator.ShortValidator#requireNaturalNumber(short, String)
      */
-    public static short requirePositiveNumber(final short n, final String message) {
+    public static short requirePositiveNumber(final short n, @Nullable final String message) {
         if (isPositive(n)) {
             return n;
         }
@@ -56,7 +57,7 @@ public class ShortValidator {
      * @see jsh.util.validation.ValidationUtil#requireNaturalNumber(long, String)
      * @see jsh.util.validation.validator.ShortValidator#requirePositiveNumber(short, String)
      */
-    public static short requireNaturalNumber(final short n, final String message) {
+    public static short requireNaturalNumber(final short n, @Nullable final String message) {
         if (isNatural(n)) {
             return n;
         }

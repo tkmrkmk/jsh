@@ -11,7 +11,6 @@ public class DebuggingUtil {
      * the moment.
      */
     public static final void nop() {
-        return;
     }
 
     /**

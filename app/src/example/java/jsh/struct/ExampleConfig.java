@@ -1,6 +1,7 @@
 package jsh.struct;
 
 import java.util.Objects;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Example DB connection config class
@@ -27,9 +28,9 @@ public class ExampleConfig {
     }
 
     private static class BuilderImpl implements Builder {
-        String url;
-        String password;
-        String user;
+        @Nullable String url;
+        @Nullable String password;
+        @Nullable String user;
 
         @Override
         public Builder url(final String url) {

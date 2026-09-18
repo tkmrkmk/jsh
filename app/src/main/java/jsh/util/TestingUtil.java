@@ -1,14 +1,12 @@
 package jsh.util;
 
 import java.util.Objects;
-import jakarta.annotation.Nonnull;
 import jsh.type.time.unit.NanoSecond;
 
 public class TestingUtil {
     private TestingUtil() {}
 
-    @Nonnull
-    public static final TestTimeResult time(@Nonnull final Runnable r) {
+    public static final TestTimeResult time(final Runnable r) {
         Objects.requireNonNull(r);
         final NanoSecond startNs = new NanoSecond(System.nanoTime());
         r.run();
@@ -16,9 +14,8 @@ public class TestingUtil {
         return new TestTimeResult(startNs, endNs);
     }
 
-    @Nonnull
     public static final TestTimeResult timeMultipleTimesTotal(
-            @Nonnull final Runnable r, final int times) {
+            final Runnable r, final int times) {
         final NanoSecond startNs = new NanoSecond(System.nanoTime());
         for (int i = 0; i < times; ++i) {
             r.run();
@@ -46,11 +43,9 @@ public class TestingUtil {
 
         @Override
         public String toString() {
-            return new StringBuilder()
-                    .append("Start time  : ").append(String.format("%,d", startNs.value()))
-                    .append("\nEnd time    : ").append(String.format("%,d", endNs.value()))
-                    .append("\nElapsed time: ").append(String.format("%,d", elapsedNs.value()))
-                    .toString();
+            return "Start time  : " + String.format("%,d%n", startNs.value())
+                +  "End time    : " + String.format("%,d%n", endNs.value())
+                +  "Elapsed time: " + String.format("%,d", elapsedNs.value());
         }
     }
 }

@@ -2,7 +2,6 @@ package jsh.util.debugging;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-import jakarta.annotation.Nonnull;
 
 public class DebuggingArrayList<T> extends ArrayList<T> {
     /**
@@ -12,7 +11,8 @@ public class DebuggingArrayList<T> extends ArrayList<T> {
      * @return a string representation of this list
      * @see java.util.AbstractCollection#toString()
      */
-    public String toString(@Nonnull final String sep) {
+    @SuppressWarnings("ReferenceEquality")
+    public String toString(final String sep) {
         final Iterator<T> it = iterator();
         if (!it.hasNext()) {
             return "[]";
@@ -26,7 +26,6 @@ public class DebuggingArrayList<T> extends ArrayList<T> {
                 return sb.append(']').toString();
             }
             sb.append(sep);
-            continue;
         }
     }
 

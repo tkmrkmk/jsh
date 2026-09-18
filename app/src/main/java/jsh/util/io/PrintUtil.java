@@ -1,7 +1,6 @@
 package jsh.util.io;
 
 import java.io.PrintStream;
-import jakarta.annotation.Nonnull;
 import jsh.util.iterator.ArrayIterator;
 
 public class PrintUtil {
@@ -16,7 +15,7 @@ public class PrintUtil {
     }
 
     public static final void println(
-            @Nonnull final String separator, @Nonnull final Object... objects) {
+            final String separator, final Object... objects) {
         for (final var itr = new ArrayIterator<>(objects); itr.hasNext(); itr.next()) {
             printStream.append(itr.get().toString());
             if (!itr.isLast()) {
