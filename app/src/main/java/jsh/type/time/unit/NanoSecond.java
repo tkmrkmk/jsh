@@ -25,38 +25,22 @@ public class NanoSecond implements Comparable<NanoSecond> {
     }
 
     public boolean gt(final NanoSecond o) {
-        return this.value < o.value;
+        return this.value > o.value;
     }
 
     public boolean ge(final NanoSecond o) {
-        return this.value <= o.value;
+        return this.value >= o.value;
     }
 
     public NanoSecond subtract(final NanoSecond ns) {
-        final long t = this.value;
-        final long a = ns.value;
-
-        //
-        final BigInteger bi = new BigInteger(String.valueOf(t));
-        bi.subtract(new BigInteger(String.valueOf(a)));
-        if (bi.compareTo(new BigInteger(String.valueOf(Long.MIN_VALUE))) <= -1) {
-            throw new ArithmeticException();
+        if (this.value < ns.value) {
+            throw new ArithmeticException("Result would be negative");
         }
-        return new NanoSecond(t - a);
+        return new NanoSecond(this.value - ns.value);
     }
 
     public NanoSecond add(final NanoSecond ns) {
-        final long t = this.value;
-        final long a = ns.value;
-
-        // input validation
-        final BigInteger bi = new BigInteger(String.valueOf(a));
-        bi.add(new BigInteger(String.valueOf(t)));
-        if (bi.compareTo(new BigInteger(String.valueOf(Long.MAX_VALUE))) >= 1) {
-            throw new ArithmeticException();
-        }
-
-        return new NanoSecond(t + a);
+        return new NanoSecond(Math.addExact(this.value, ns.value));
     }
 
     @Override
